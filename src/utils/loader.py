@@ -22,8 +22,17 @@ logger = logging.getLogger(__name__)
 # Ordered most-strict first. UTF-8 is strict enough to reject most non-UTF-8
 # byte sequences, which is what makes it a usable probe. Latin-1 is last on
 # purpose: it maps all 256 byte values to characters and therefore *never*
-# fails, so anything after it would be unreachable.
-DEFAULT_ENCODINGS: tuple[str, ...] = ("utf-8", "utf-8-sig", "cp1252", "latin-1")
+# fails, so anything placed after it would be unreachable.
+DEFAULT_ENCODINGS: tuple[str, ...] = ("utf-8", "latin-1")
+
+# Opt-in ladder for messier inputs, passed as `encodings=EXTENDED_ENCODINGS`.
+# It is not the default because the two extra rungs change what a file is
+# *reported* as: cp1252 differs from latin-1 only over bytes 0x80-0x9F, where it
+# decodes typographic characters (curly quotes, en dashes) that latin-1 turns
+# into C1 control codes -- usually the better read of real-world Windows data,
+# but a different answer to "which encoding is this file". utf-8-sig strips a
+# byte-order mark that plain utf-8 would leave glued to the first column name.
+EXTENDED_ENCODINGS: tuple[str, ...] = ("utf-8", "utf-8-sig", "cp1252", "latin-1")
 
 
 @dataclass(frozen=True)
@@ -70,7 +79,8 @@ def read_csv_safe(
         CSV (or other delimited text) file to read.
     encodings:
         Candidate encodings, most-strict first. Defaults to
-        ``("utf-8", "utf-8-sig", "cp1252", "latin-1")``.
+        ``("utf-8", "latin-1")``; pass :data:`EXTENDED_ENCODINGS` for files
+        that may carry a BOM or Windows-1252 typography.
     verbose:
         Print a one-line provenance summary. The result also carries the
         encoding programmatically, so this is only for humans.
@@ -191,6 +201,7 @@ def summarise_duplicates(
 
 __all__ = [
     "DEFAULT_ENCODINGS",
+    "EXTENDED_ENCODINGS",
     "EncodingDetectionError",
     "LoadResult",
     "read_csv_safe",
