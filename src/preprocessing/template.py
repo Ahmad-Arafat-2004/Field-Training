@@ -407,6 +407,16 @@ class PreprocessingTemplate:
             raise TypeError(f"X must be a DataFrame, got {type(X).__name__}.")
 
         X = self._align_columns(X)
+        if X.empty:
+            # sklearn's imputers reject a zero-row array, but "nothing to
+            # transform" is a legitimate input (an empty filtered batch), and
+            # the caller still needs the fitted schema back.
+            return pd.DataFrame(
+                np.empty((0, len(self.feature_names_out_)), dtype=np.float64),
+                columns=self.feature_names_out_,
+                index=X.index,
+            )
+
         blocks: list[np.ndarray] = []
 
         if self.numeric_columns_:
