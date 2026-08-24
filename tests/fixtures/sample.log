@@ -1,0 +1,942 @@
+2026-08-02T01:01:07,001 [INFO] app.service.db - Session opened for user u58
+2026-08-03T02:02:14,002 [WARNING] app.service.worker - Cache miss ratio 0.79 above threshold
+2026-08-04T03:03:21,003 [ERROR] app.service.api - Failed to parse payload for order_id=884212: unexpected token
+2026-08-05T04:04:28,004 [INFO] app.service.worker - Worker worker-95 heartbeat ok
+2026-08-06T05:05:35,005 [INFO] app.service.api - Session opened for user u8
+2026-08-07T06:06:42,006 [WARNING] app.service.worker - Retry 4/5 for job worker-4
+2026-08-08T07:07:49,007 [INFO] app.service.api - Session opened for user u67
+2026-08-09T08:08:56,008 [INFO] app.service.api - Worker worker-85 heartbeat ok
+2026-08-10T09:09:03,009 [INFO] app.service.db - Worker worker-71 heartbeat ok
+2026-08-11T10:10:10,010 [INFO] app.service.api - Worker worker-66 heartbeat ok
+2026-08-12T11:11:17,011 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-13T12:12:24,012 [INFO] app.service.worker - Request GET /api/v1/messages completed in 1ms
+2026-08-14T13:13:31,013 [WARNING] app.service.db - Retry 49/5 for job worker-49
+2026-08-15T14:14:38,014 [INFO] app.service.worker - Session opened for user u26
+2026-08-16T15:15:45,015 [INFO] app.service.db - Worker worker-2 heartbeat ok
+2026-08-17T16:16:52,016 [INFO] app.service.api - Request GET /api/v1/messages completed in 32ms
+2026-08-18T17:17:59,017 [ERROR] app.service.db - Failed to parse payload for order_id=884223: unexpected token
+2026-08-19T18:18:06,018 [WARNING] app.service.db - Retry 83/5 for job worker-83
+2026-08-20T19:19:13,019 [CRITICAL] app.service.db - Disk usage 928% on /var/log -- shedding load
+2026-08-21T20:20:20,020 [WARNING] app.service.api - Cache miss ratio 0.27 above threshold
+2026-08-22T21:21:27,021 [INFO] app.service.worker - Session opened for user u74
+2026-08-23T22:22:34,022 [ERROR] app.service.api - Connection timeout connecting to db-57 at 10.0.0.6:5432 after 30000ms
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-24T23:23:41,023 [INFO] app.service.db - Worker worker-10 heartbeat ok
+2026-08-25T00:24:48,024 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-26T01:25:55,025 [INFO] app.service.api - Worker worker-76 heartbeat ok
+2026-08-27T02:26:02,026 [INFO] app.service.db - Request GET /api/v1/messages completed in 24ms
+2026-08-28T03:27:09,027 [INFO] app.service.worker - Request GET /api/v1/messages completed in 32ms
+2026-08-01T04:28:16,028 [WARNING] app.service.worker - Retry 50/5 for job worker-50
+2026-08-02T05:29:23,029 [INFO] app.service.api - Worker worker-14 heartbeat ok
+2026-08-03T06:30:30,030 [ERROR] app.service.api - Failed to parse payload for order_id=884295: unexpected token
+2026-08-04T07:31:37,031 [INFO] app.service.db - Session opened for user u38
+2026-08-05T08:32:44,032 [DEBUG] app.service.api - state=17 queue_depth=17
+2026-08-06T09:33:51,033 [INFO] app.service.worker - Session opened for user u79
+2026-08-07T10:34:58,034 [INFO] app.service.worker - Request GET /api/v1/messages completed in 3ms
+2026-08-08T11:35:05,035 [WARNING] app.service.api - Cache miss ratio 0.8 above threshold
+2026-08-09T12:36:12,036 [WARNING] app.service.worker - Cache miss ratio 0.74 above threshold
+2026-08-10T13:37:19,037 [ERROR] app.service.db - Connection timeout connecting to db-43 at 10.0.0.4:5432 after 30000ms
+2026-08-11T14:38:26,038 [DEBUG] app.service.db - state=46 queue_depth=46
+2026-08-12T15:39:33,039 [DEBUG] app.service.api - state=77 queue_depth=77
+2026-08-13T16:40:40,040 [INFO] app.service.db - Session opened for user u41
+2026-08-14T17:41:47,041 [DEBUG] app.service.api - state=58 queue_depth=58
+2026-08-15T18:42:54,042 [INFO] app.service.worker - Session opened for user u91
+2026-08-16T19:43:01,043 [INFO] app.service.db - Worker worker-11 heartbeat ok
+2026-08-17T20:44:08,044 [DEBUG] app.service.db - state=4 queue_depth=4
+2026-08-18T21:45:15,045 [INFO] app.service.worker - Session opened for user u49
+2026-08-19T22:46:22,046 [INFO] app.service.api - Session opened for user u11
+2026-08-20T23:47:29,047 [INFO] app.service.db - Worker worker-94 heartbeat ok
+2026-08-21T00:48:36,048 [INFO] app.service.worker - Session opened for user u75
+2026-08-22T01:49:43,049 [INFO] app.service.api - Session opened for user u67
+2026-08-23T02:50:50,050 [INFO] app.service.db - Request GET /api/v1/messages completed in 3ms
+2026-08-24T03:51:57,051 [DEBUG] app.service.api - state=64 queue_depth=64
+2026-08-25T04:52:04,052 [WARNING] app.service.db - Retry 39/5 for job worker-39
+2026-08-26T05:53:11,053 [INFO] app.service.worker - Request GET /api/v1/messages completed in 22ms
+2026-08-27T06:54:18,054 [INFO] app.service.db - Worker worker-31 heartbeat ok
+2026-08-28T07:55:25,055 [INFO] app.service.api - Worker worker-82 heartbeat ok
+2026-08-01T08:56:32,056 [INFO] app.service.api - Request GET /api/v1/messages completed in 50ms
+2026-08-02T09:57:39,057 [INFO] app.service.api - Worker worker-18 heartbeat ok
+2026-08-03T10:58:46,058 [INFO] app.service.worker - Request GET /api/v1/messages completed in 9ms
+2026-08-04T11:59:53,059 [INFO] app.service.db - Request GET /api/v1/messages completed in 61ms
+2026-08-05T12:00:00,060 [DEBUG] app.service.db - state=49 queue_depth=49
+2026-08-06T13:01:07,061 [INFO] app.service.worker - Session opened for user u58
+2026-08-07T14:02:14,062 [ERROR] app.service.db - Connection timeout connecting to db-78 at 10.0.0.2:5432 after 30000ms
+2026-08-08T15:03:21,063 [INFO] app.service.db - Worker worker-84 heartbeat ok
+2026-08-09T16:04:28,064 [INFO] app.service.db - Worker worker-25 heartbeat ok
+2026-08-10T17:05:35,065 [INFO] app.service.api - Worker worker-19 heartbeat ok
+2026-08-11T18:06:42,066 [DEBUG] app.service.api - state=58 queue_depth=58
+2026-08-12T19:07:49,067 [INFO] app.service.worker - Session opened for user u48
+2026-08-13T20:08:56,068 [INFO] app.service.db - Request GET /api/v1/messages completed in 33ms
+2026-08-14T21:09:03,069 [INFO] app.service.worker - Worker worker-92 heartbeat ok
+2026-08-15T22:10:10,070 [WARNING] app.service.db - Cache miss ratio 0.70 above threshold
+2026-08-16T23:11:17,071 [INFO] app.service.api - Session opened for user u12
+2026-08-17T00:12:24,072 [DEBUG] app.service.worker - state=50 queue_depth=50
+2026-08-18T01:13:31,073 [INFO] app.service.worker - Request GET /api/v1/messages completed in 1ms
+2026-08-19T02:14:38,074 [INFO] app.service.worker - Session opened for user u44
+2026-08-20T03:15:45,075 [INFO] app.service.api - Request GET /api/v1/messages completed in 93ms
+2026-08-21T04:16:52,076 [WARNING] app.service.api - Cache miss ratio 0.40 above threshold
+2026-08-22T05:17:59,077 [WARNING] app.service.db - Retry 65/5 for job worker-65
+2026-08-23T06:18:06,078 [ERROR] app.service.worker - Failed to parse payload for order_id=884254: unexpected token
+2026-08-24T07:19:13,079 [ERROR] app.service.db - Connection timeout connecting to db-5 at 10.0.0.4:5432 after 30000ms
+2026-08-25T08:20:20,080 [INFO] app.service.db - Request GET /api/v1/messages completed in 20ms
+2026-08-26T09:21:27,081 [DEBUG] app.service.db - state=75 queue_depth=75
+2026-08-27T10:22:34,082 [INFO] app.service.worker - Worker worker-72 heartbeat ok
+2026-08-28T11:23:41,083 [INFO] app.service.worker - Session opened for user u22
+2026-08-01T12:24:48,084 [INFO] app.service.worker - Worker worker-27 heartbeat ok
+2026-08-02T13:25:55,085 [INFO] app.service.worker - Session opened for user u35
+2026-08-03T14:26:02,086 [WARNING] app.service.worker - Retry 1/5 for job worker-1
+2026-08-04T15:27:09,087 [ERROR] app.service.worker - Connection timeout connecting to db-52 at 10.0.0.3:5432 after 30000ms
+2026-08-05T16:28:16,088 [INFO] app.service.worker - Request GET /api/v1/messages completed in 59ms
+2026-08-06T17:29:23,089 [DEBUG] app.service.db - state=35 queue_depth=35
+2026-08-07T18:30:30,090 [INFO] app.service.db - Request GET /api/v1/messages completed in 56ms
+2026-08-08T19:31:37,091 [INFO] app.service.api - Request GET /api/v1/messages completed in 54ms
+2026-08-09T20:32:44,092 [DEBUG] app.service.api - state=90 queue_depth=90
+2026-08-10T21:33:51,093 [ERROR] app.service.api - Connection timeout connecting to db-2 at 10.0.0.6:5432 after 30000ms
+2026-08-11T22:34:58,094 [INFO] app.service.db - Session opened for user u14
+2026-08-12T23:35:05,095 [INFO] app.service.worker - Request GET /api/v1/messages completed in 80ms
+2026-08-13T00:36:12,096 [INFO] app.service.worker - Session opened for user u56
+2026-08-14T01:37:19,097 [INFO] app.service.worker - Worker worker-79 heartbeat ok
+2026-08-15T02:38:26,098 [INFO] app.service.worker - Session opened for user u82
+2026-08-16T03:39:33,099 [INFO] app.service.worker - Session opened for user u76
+2026-08-17T04:40:40,100 [WARNING] app.service.api - Cache miss ratio 0.41 above threshold
+2026-08-18T05:41:47,101 [INFO] app.service.api - Request GET /api/v1/messages completed in 25ms
+2026-08-19T06:42:54,102 [WARNING] app.service.api - Retry 94/5 for job worker-94
+2026-08-20T07:43:01,103 [WARNING] app.service.db - Retry 54/5 for job worker-54
+2026-08-21T08:44:08,104 [WARNING] app.service.api - Retry 26/5 for job worker-26
+2026-08-22T09:45:15,105 [DEBUG] app.service.db - state=15 queue_depth=15
+2026-08-23T10:46:22,106 [INFO] app.service.api - Session opened for user u10
+2026-08-24T11:47:29,107 [CRITICAL] app.service.api - Disk usage 998% on /var/log -- shedding load
+2026-08-25T12:48:36,108 [WARNING] app.service.api - Retry 27/5 for job worker-27
+2026-08-26T13:49:43,109 [INFO] app.service.worker - Worker worker-13 heartbeat ok
+2026-08-27T14:50:50,110 [WARNING] app.service.api - Cache miss ratio 0.98 above threshold
+2026-08-28T15:51:57,111 [INFO] app.service.db - Worker worker-66 heartbeat ok
+2026-08-01T16:52:04,112 [INFO] app.service.db - Session opened for user u2
+2026-08-02T17:53:11,113 [INFO] app.service.db - Request GET /api/v1/messages completed in 59ms
+2026-08-03T18:54:18,114 [INFO] app.service.api - Worker worker-78 heartbeat ok
+2026-08-04T19:55:25,115 [ERROR] app.service.db - Connection timeout connecting to db-11 at 10.0.0.8:5432 after 30000ms
+2026-08-05T20:56:32,116 [WARNING] app.service.db - Cache miss ratio 0.36 above threshold
+2026-08-06T21:57:39,117 [INFO] app.service.db - Request GET /api/v1/messages completed in 18ms
+2026-08-07T22:58:46,118 [INFO] app.service.db - Session opened for user u99
+2026-08-08T23:59:53,119 [INFO] app.service.api - Worker worker-93 heartbeat ok
+2026-08-09T00:00:00,120 [ERROR] app.service.db - Failed to parse payload for order_id=884261: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-10T01:01:07,121 [INFO] app.service.worker - Session opened for user u7
+2026-08-11T02:02:14,122 [WARNING] app.service.db - Cache miss ratio 0.28 above threshold
+2026-08-12T03:03:21,123 [INFO] app.service.api - Session opened for user u50
+2026-08-13T04:04:28,124 [INFO] app.service.api - Session opened for user u98
+2026-08-14T05:05:35,125 [DEBUG] app.service.api - state=15 queue_depth=15
+2026-08-15T06:06:42,126 [INFO] app.service.db - Worker worker-52 heartbeat ok
+2026-08-16T07:07:49,127 [INFO] app.service.db - Session opened for user u2
+2026-08-17T08:08:56,128 [WARNING] app.service.db - Cache miss ratio 0.71 above threshold
+2026-08-18T09:09:03,129 [DEBUG] app.service.worker - state=13 queue_depth=13
+2026-08-19T10:10:10,130 [INFO] app.service.worker - Request GET /api/v1/messages completed in 77ms
+2026-08-20T11:11:17,131 [INFO] app.service.db - Request GET /api/v1/messages completed in 61ms
+2026-08-21T12:12:24,132 [INFO] app.service.worker - Session opened for user u77
+2026-08-22T13:13:31,133 [INFO] app.service.db - Worker worker-37 heartbeat ok
+2026-08-23T14:14:38,134 [INFO] app.service.worker - Worker worker-37 heartbeat ok
+2026-08-24T15:15:45,135 [INFO] app.service.db - Session opened for user u85
+2026-08-25T16:16:52,136 [ERROR] app.service.worker - Connection timeout connecting to db-6 at 10.0.0.4:5432 after 30000ms
+2026-08-26T17:17:59,137 [INFO] app.service.db - Request GET /api/v1/messages completed in 96ms
+2026-08-27T18:18:06,138 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-28T19:19:13,139 [INFO] app.service.api - Request GET /api/v1/messages completed in 67ms
+2026-08-01T20:20:20,140 [DEBUG] app.service.worker - state=60 queue_depth=60
+2026-08-02T21:21:27,141 [DEBUG] app.service.api - state=78 queue_depth=78
+2026-08-03T22:22:34,142 [ERROR] app.service.db - Failed to parse payload for order_id=884216: unexpected token
+2026-08-04T23:23:41,143 [INFO] app.service.api - Request GET /api/v1/messages completed in 47ms
+2026-08-05T00:24:48,144 [WARNING] app.service.db - Cache miss ratio 0.77 above threshold
+2026-08-06T01:25:55,145 [INFO] app.service.db - Session opened for user u47
+2026-08-07T02:26:02,146 [DEBUG] app.service.worker - state=17 queue_depth=17
+2026-08-08T03:27:09,147 [INFO] app.service.db - Session opened for user u65
+2026-08-09T04:28:16,148 [WARNING] app.service.worker - Retry 36/5 for job worker-36
+2026-08-10T05:29:23,149 [WARNING] app.service.worker - Retry 84/5 for job worker-84
+2026-08-11T06:30:30,150 [INFO] app.service.worker - Request GET /api/v1/messages completed in 8ms
+2026-08-12T07:31:37,151 [WARNING] app.service.api - Cache miss ratio 0.80 above threshold
+2026-08-13T08:32:44,152 [CRITICAL] app.service.worker - Disk usage 936% on /var/log -- shedding load
+2026-08-14T09:33:51,153 [INFO] app.service.api - Session opened for user u71
+2026-08-15T10:34:58,154 [INFO] app.service.db - Worker worker-62 heartbeat ok
+2026-08-16T11:35:05,155 [WARNING] app.service.db - Cache miss ratio 0.96 above threshold
+2026-08-17T12:36:12,156 [INFO] app.service.api - Request GET /api/v1/messages completed in 58ms
+2026-08-18T13:37:19,157 [INFO] app.service.db - Session opened for user u50
+2026-08-19T14:38:26,158 [INFO] app.service.worker - Session opened for user u42
+2026-08-20T15:39:33,159 [INFO] app.service.api - Session opened for user u55
+2026-08-21T16:40:40,160 [INFO] app.service.db - Worker worker-11 heartbeat ok
+2026-08-22T17:41:47,161 [INFO] app.service.db - Session opened for user u88
+2026-08-23T18:42:54,162 [INFO] app.service.api - Request GET /api/v1/messages completed in 40ms
+2026-08-24T19:43:01,163 [DEBUG] app.service.worker - state=11 queue_depth=11
+2026-08-25T20:44:08,164 [INFO] app.service.db - Session opened for user u37
+2026-08-26T21:45:15,165 [WARNING] app.service.db - Cache miss ratio 0.16 above threshold
+2026-08-27T22:46:22,166 [INFO] app.service.worker - Session opened for user u88
+2026-08-28T23:47:29,167 [INFO] app.service.db - Worker worker-41 heartbeat ok
+2026-08-01T00:48:36,168 [INFO] app.service.worker - Session opened for user u32
+2026-08-02T01:49:43,169 [INFO] app.service.api - Worker worker-47 heartbeat ok
+2026-08-03T02:50:50,170 [INFO] app.service.worker - Request GET /api/v1/messages completed in 73ms
+2026-08-04T03:51:57,171 [INFO] app.service.api - Session opened for user u76
+2026-08-05T04:52:04,172 [WARNING] app.service.db - Cache miss ratio 0.3 above threshold
+2026-08-06T05:53:11,173 [INFO] app.service.api - Session opened for user u73
+2026-08-07T06:54:18,174 [DEBUG] app.service.worker - state=55 queue_depth=55
+2026-08-08T07:55:25,175 [INFO] app.service.worker - Worker worker-11 heartbeat ok
+2026-08-09T08:56:32,176 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-10T09:57:39,177 [INFO] app.service.worker - Request GET /api/v1/messages completed in 84ms
+2026-08-11T10:58:46,178 [WARNING] app.service.db - Retry 98/5 for job worker-98
+2026-08-12T11:59:53,179 [INFO] app.service.db - Worker worker-44 heartbeat ok
+2026-08-13T12:00:00,180 [INFO] app.service.db - Worker worker-69 heartbeat ok
+2026-08-14T13:01:07,181 [INFO] app.service.db - Request GET /api/v1/messages completed in 97ms
+2026-08-15T14:02:14,182 [INFO] app.service.api - Worker worker-60 heartbeat ok
+2026-08-16T15:03:21,183 [INFO] app.service.api - Session opened for user u15
+2026-08-17T16:04:28,184 [DEBUG] app.service.api - state=32 queue_depth=32
+2026-08-18T17:05:35,185 [DEBUG] app.service.db - state=88 queue_depth=88
+2026-08-19T18:06:42,186 [INFO] app.service.db - Worker worker-68 heartbeat ok
+2026-08-20T19:07:49,187 [WARNING] app.service.db - Retry 40/5 for job worker-40
+2026-08-21T20:08:56,188 [INFO] app.service.api - Request GET /api/v1/messages completed in 8ms
+2026-08-22T21:09:03,189 [ERROR] app.service.api - Failed to parse payload for order_id=884241: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-23T22:10:10,190 [INFO] app.service.api - Session opened for user u77
+2026-08-24T23:11:17,191 [INFO] app.service.db - Request GET /api/v1/messages completed in 24ms
+2026-08-25T00:12:24,192 [INFO] app.service.worker - Worker worker-71 heartbeat ok
+2026-08-26T01:13:31,193 [INFO] app.service.db - Worker worker-44 heartbeat ok
+2026-08-27T02:14:38,194 [INFO] app.service.db - Request GET /api/v1/messages completed in 7ms
+2026-08-28T03:15:45,195 [DEBUG] app.service.db - state=68 queue_depth=68
+2026-08-01T04:16:52,196 [INFO] app.service.worker - Request GET /api/v1/messages completed in 31ms
+2026-08-02T05:17:59,197 [INFO] app.service.db - Worker worker-32 heartbeat ok
+2026-08-03T06:18:06,198 [INFO] app.service.db - Request GET /api/v1/messages completed in 21ms
+2026-08-04T07:19:13,199 [WARNING] app.service.worker - Retry 95/5 for job worker-95
+2026-08-05T08:20:20,200 [INFO] app.service.api - Request GET /api/v1/messages completed in 74ms
+2026-08-06T09:21:27,201 [ERROR] app.service.api - Connection timeout connecting to db-11 at 10.0.0.7:5432 after 30000ms
+2026-08-07T10:22:34,202 [INFO] app.service.db - Request GET /api/v1/messages completed in 89ms
+2026-08-08T11:23:41,203 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-09T12:24:48,204 [WARNING] app.service.worker - Retry 12/5 for job worker-12
+2026-08-10T13:25:55,205 [WARNING] app.service.worker - Cache miss ratio 0.64 above threshold
+2026-08-11T14:26:02,206 [DEBUG] app.service.db - state=41 queue_depth=41
+2026-08-12T15:27:09,207 [INFO] app.service.db - Session opened for user u60
+2026-08-13T16:28:16,208 [INFO] app.service.api - Session opened for user u14
+2026-08-14T17:29:23,209 [INFO] app.service.api - Session opened for user u84
+2026-08-15T18:30:30,210 [ERROR] app.service.worker - Failed to parse payload for order_id=884291: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-16T19:31:37,211 [INFO] app.service.api - Worker worker-93 heartbeat ok
+2026-08-17T20:32:44,212 [DEBUG] app.service.api - state=38 queue_depth=38
+2026-08-18T21:33:51,213 [DEBUG] app.service.worker - state=39 queue_depth=39
+2026-08-19T22:34:58,214 [INFO] app.service.worker - Session opened for user u12
+2026-08-20T23:35:05,215 [WARNING] app.service.worker - Cache miss ratio 0.15 above threshold
+2026-08-21T00:36:12,216 [INFO] app.service.worker - Worker worker-61 heartbeat ok
+2026-08-22T01:37:19,217 [INFO] app.service.api - Worker worker-14 heartbeat ok
+2026-08-23T02:38:26,218 [INFO] app.service.worker - Request GET /api/v1/messages completed in 81ms
+2026-08-24T03:39:33,219 [WARNING] app.service.api - Cache miss ratio 0.60 above threshold
+2026-08-25T04:40:40,220 [CRITICAL] app.service.api - Disk usage 921% on /var/log -- shedding load
+2026-08-26T05:41:47,221 [INFO] app.service.db - Request GET /api/v1/messages completed in 55ms
+2026-08-27T06:42:54,222 [INFO] app.service.worker - Request GET /api/v1/messages completed in 50ms
+2026-08-28T07:43:01,223 [INFO] app.service.worker - Worker worker-2 heartbeat ok
+2026-08-01T08:44:08,224 [INFO] app.service.api - Worker worker-85 heartbeat ok
+2026-08-02T09:45:15,225 [WARNING] app.service.db - Retry 40/5 for job worker-40
+2026-08-03T10:46:22,226 [CRITICAL] app.service.db - Disk usage 927% on /var/log -- shedding load
+2026-08-04T11:47:29,227 [INFO] app.service.worker - Request GET /api/v1/messages completed in 92ms
+2026-08-05T12:48:36,228 [WARNING] app.service.worker - Cache miss ratio 0.30 above threshold
+2026-08-06T13:49:43,229 [INFO] app.service.api - Session opened for user u74
+2026-08-07T14:50:50,230 [DEBUG] app.service.worker - state=92 queue_depth=92
+2026-08-08T15:51:57,231 [INFO] app.service.worker - Request GET /api/v1/messages completed in 85ms
+2026-08-09T16:52:04,232 [INFO] app.service.api - Request GET /api/v1/messages completed in 62ms
+2026-08-10T17:53:11,233 [INFO] app.service.api - Worker worker-47 heartbeat ok
+2026-08-11T18:54:18,234 [INFO] app.service.db - Request GET /api/v1/messages completed in 94ms
+2026-08-12T19:55:25,235 [WARNING] app.service.worker - Retry 34/5 for job worker-34
+2026-08-13T20:56:32,236 [DEBUG] app.service.db - state=77 queue_depth=77
+2026-08-14T21:57:39,237 [CRITICAL] app.service.api - Disk usage 937% on /var/log -- shedding load
+2026-08-15T22:58:46,238 [WARNING] app.service.api - Cache miss ratio 0.24 above threshold
+2026-08-16T23:59:53,239 [INFO] app.service.api - Worker worker-85 heartbeat ok
+2026-08-17T00:00:00,240 [INFO] app.service.worker - Session opened for user u49
+2026-08-18T01:01:07,241 [WARNING] app.service.db - Cache miss ratio 0.5 above threshold
+2026-08-19T02:02:14,242 [INFO] app.service.worker - Request GET /api/v1/messages completed in 52ms
+2026-08-20T03:03:21,243 [INFO] app.service.db - Request GET /api/v1/messages completed in 32ms
+2026-08-21T04:04:28,244 [ERROR] app.service.worker - Connection timeout connecting to db-86 at 10.0.0.4:5432 after 30000ms
+2026-08-22T05:05:35,245 [INFO] app.service.db - Request GET /api/v1/messages completed in 45ms
+2026-08-23T06:06:42,246 [INFO] app.service.worker - Session opened for user u98
+2026-08-24T07:07:49,247 [INFO] app.service.db - Worker worker-89 heartbeat ok
+2026-08-25T08:08:56,248 [INFO] app.service.worker - Request GET /api/v1/messages completed in 15ms
+2026-08-26T09:09:03,249 [INFO] app.service.db - Worker worker-4 heartbeat ok
+2026-08-27T10:10:10,250 [DEBUG] app.service.db - state=93 queue_depth=93
+2026-08-28T11:11:17,251 [INFO] app.service.db - Session opened for user u97
+2026-08-01T12:12:24,252 [INFO] app.service.api - Request GET /api/v1/messages completed in 16ms
+2026-08-02T13:13:31,253 [WARNING] app.service.api - Cache miss ratio 0.61 above threshold
+2026-08-03T14:14:38,254 [INFO] app.service.worker - Request GET /api/v1/messages completed in 40ms
+2026-08-04T15:15:45,255 [DEBUG] app.service.api - state=94 queue_depth=94
+2026-08-05T16:16:52,256 [INFO] app.service.worker - Worker worker-22 heartbeat ok
+2026-08-06T17:17:59,257 [INFO] app.service.worker - Worker worker-16 heartbeat ok
+2026-08-07T18:18:06,258 [ERROR] app.service.api - Connection timeout connecting to db-69 at 10.0.0.9:5432 after 30000ms
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-08T19:19:13,259 [WARNING] app.service.api - Cache miss ratio 0.42 above threshold
+2026-08-09T20:20:20,260 [ERROR] app.service.worker - Failed to parse payload for order_id=884251: unexpected token
+2026-08-10T21:21:27,261 [INFO] app.service.db - Request GET /api/v1/messages completed in 4ms
+2026-08-11T22:22:34,262 [INFO] app.service.db - Worker worker-64 heartbeat ok
+2026-08-12T23:23:41,263 [DEBUG] app.service.db - state=27 queue_depth=27
+2026-08-13T00:24:48,264 [INFO] app.service.api - Session opened for user u26
+2026-08-14T01:25:55,265 [INFO] app.service.db - Worker worker-3 heartbeat ok
+2026-08-15T02:26:02,266 [INFO] app.service.worker - Session opened for user u26
+2026-08-16T03:27:09,267 [WARNING] app.service.worker - Retry 14/5 for job worker-14
+2026-08-17T04:28:16,268 [INFO] app.service.db - Worker worker-54 heartbeat ok
+2026-08-18T05:29:23,269 [INFO] app.service.db - Worker worker-11 heartbeat ok
+2026-08-19T06:30:30,270 [WARNING] app.service.api - Cache miss ratio 0.91 above threshold
+2026-08-20T07:31:37,271 [WARNING] app.service.worker - Retry 86/5 for job worker-86
+2026-08-21T08:32:44,272 [INFO] app.service.worker - Worker worker-68 heartbeat ok
+2026-08-22T09:33:51,273 [INFO] app.service.db - Request GET /api/v1/messages completed in 24ms
+2026-08-23T10:34:58,274 [WARNING] app.service.db - Retry 10/5 for job worker-10
+2026-08-24T11:35:05,275 [DEBUG] app.service.api - state=68 queue_depth=68
+2026-08-25T12:36:12,276 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-26T13:37:19,277 [INFO] app.service.db - Request GET /api/v1/messages completed in 97ms
+2026-08-27T14:38:26,278 [WARNING] app.service.worker - Cache miss ratio 0.71 above threshold
+2026-08-28T15:39:33,279 [WARNING] app.service.api - Retry 80/5 for job worker-80
+2026-08-01T16:40:40,280 [DEBUG] app.service.worker - state=50 queue_depth=50
+2026-08-02T17:41:47,281 [DEBUG] app.service.db - state=8 queue_depth=8
+2026-08-03T18:42:54,282 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-04T19:43:01,283 [INFO] app.service.worker - Session opened for user u88
+2026-08-05T20:44:08,284 [INFO] app.service.api - Request GET /api/v1/messages completed in 78ms
+2026-08-06T21:45:15,285 [WARNING] app.service.worker - Cache miss ratio 0.99 above threshold
+2026-08-07T22:46:22,286 [INFO] app.service.api - Session opened for user u34
+2026-08-08T23:47:29,287 [INFO] app.service.worker - Session opened for user u64
+2026-08-09T00:48:36,288 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-10T01:49:43,289 [WARNING] app.service.worker - Retry 3/5 for job worker-3
+2026-08-11T02:50:50,290 [INFO] app.service.db - Session opened for user u93
+2026-08-12T03:51:57,291 [INFO] app.service.api - Request GET /api/v1/messages completed in 15ms
+2026-08-13T04:52:04,292 [INFO] app.service.worker - Session opened for user u93
+2026-08-14T05:53:11,293 [INFO] app.service.db - Request GET /api/v1/messages completed in 55ms
+2026-08-15T06:54:18,294 [INFO] app.service.worker - Session opened for user u68
+2026-08-16T07:55:25,295 [INFO] app.service.api - Worker worker-84 heartbeat ok
+2026-08-17T08:56:32,296 [INFO] app.service.api - Request GET /api/v1/messages completed in 64ms
+2026-08-18T09:57:39,297 [ERROR] app.service.db - Failed to parse payload for order_id=884247: unexpected token
+2026-08-19T10:58:46,298 [DEBUG] app.service.api - state=63 queue_depth=63
+2026-08-20T11:59:53,299 [WARNING] app.service.worker - Cache miss ratio 0.96 above threshold
+2026-08-21T12:00:00,300 [ERROR] app.service.worker - Failed to parse payload for order_id=884219: unexpected token
+2026-08-22T13:01:07,301 [INFO] app.service.api - Worker worker-5 heartbeat ok
+2026-08-23T14:02:14,302 [INFO] app.service.worker - Request GET /api/v1/messages completed in 31ms
+2026-08-24T15:03:21,303 [INFO] app.service.db - Request GET /api/v1/messages completed in 40ms
+2026-08-25T16:04:28,304 [DEBUG] app.service.worker - state=28 queue_depth=28
+2026-08-26T17:05:35,305 [WARNING] app.service.worker - Retry 44/5 for job worker-44
+2026-08-27T18:06:42,306 [INFO] app.service.api - Worker worker-49 heartbeat ok
+2026-08-28T19:07:49,307 [INFO] app.service.db - Request GET /api/v1/messages completed in 45ms
+2026-08-01T20:08:56,308 [WARNING] app.service.db - Retry 27/5 for job worker-27
+2026-08-02T21:09:03,309 [WARNING] app.service.db - Cache miss ratio 0.61 above threshold
+2026-08-03T22:10:10,310 [INFO] app.service.worker - Session opened for user u24
+2026-08-04T23:11:17,311 [WARNING] app.service.db - Cache miss ratio 0.10 above threshold
+2026-08-05T00:12:24,312 [INFO] app.service.db - Worker worker-80 heartbeat ok
+2026-08-06T01:13:31,313 [INFO] app.service.db - Session opened for user u66
+2026-08-07T02:14:38,314 [INFO] app.service.worker - Session opened for user u28
+2026-08-08T03:15:45,315 [CRITICAL] app.service.api - Disk usage 920% on /var/log -- shedding load
+2026-08-09T04:16:52,316 [WARNING] app.service.worker - Retry 16/5 for job worker-16
+2026-08-10T05:17:59,317 [DEBUG] app.service.db - state=58 queue_depth=58
+2026-08-11T06:18:06,318 [INFO] app.service.db - Worker worker-33 heartbeat ok
+2026-08-12T07:19:13,319 [INFO] app.service.api - Session opened for user u63
+2026-08-13T08:20:20,320 [WARNING] app.service.api - Retry 27/5 for job worker-27
+2026-08-14T09:21:27,321 [INFO] app.service.worker - Worker worker-89 heartbeat ok
+2026-08-15T10:22:34,322 [INFO] app.service.db - Session opened for user u41
+2026-08-16T11:23:41,323 [INFO] app.service.api - Request GET /api/v1/messages completed in 36ms
+2026-08-17T12:24:48,324 [INFO] app.service.worker - Worker worker-46 heartbeat ok
+2026-08-18T13:25:55,325 [CRITICAL] app.service.db - Disk usage 945% on /var/log -- shedding load
+2026-08-19T14:26:02,326 [WARNING] app.service.worker - Retry 81/5 for job worker-81
+2026-08-20T15:27:09,327 [INFO] app.service.db - Session opened for user u85
+2026-08-21T16:28:16,328 [DEBUG] app.service.api - state=72 queue_depth=72
+2026-08-22T17:29:23,329 [INFO] app.service.api - Worker worker-81 heartbeat ok
+2026-08-23T18:30:30,330 [ERROR] app.service.api - Failed to parse payload for order_id=884251: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-24T19:31:37,331 [INFO] app.service.db - Worker worker-64 heartbeat ok
+2026-08-25T20:32:44,332 [WARNING] app.service.api - Cache miss ratio 0.61 above threshold
+2026-08-26T21:33:51,333 [INFO] app.service.api - Session opened for user u67
+2026-08-27T22:34:58,334 [INFO] app.service.api - Worker worker-62 heartbeat ok
+2026-08-28T23:35:05,335 [INFO] app.service.db - Session opened for user u90
+2026-08-01T00:36:12,336 [DEBUG] app.service.api - state=47 queue_depth=47
+2026-08-02T01:37:19,337 [DEBUG] app.service.db - state=7 queue_depth=7
+2026-08-03T02:38:26,338 [INFO] app.service.db - Session opened for user u61
+2026-08-04T03:39:33,339 [INFO] app.service.api - Request GET /api/v1/messages completed in 5ms
+2026-08-05T04:40:40,340 [INFO] app.service.worker - Worker worker-39 heartbeat ok
+2026-08-06T05:41:47,341 [INFO] app.service.worker - Request GET /api/v1/messages completed in 61ms
+2026-08-07T06:42:54,342 [INFO] app.service.api - Worker worker-74 heartbeat ok
+2026-08-08T07:43:01,343 [INFO] app.service.api - Session opened for user u80
+2026-08-09T08:44:08,344 [INFO] app.service.db - Request GET /api/v1/messages completed in 9ms
+2026-08-10T09:45:15,345 [INFO] app.service.db - Worker worker-5 heartbeat ok
+2026-08-11T10:46:22,346 [INFO] app.service.db - Worker worker-64 heartbeat ok
+2026-08-12T11:47:29,347 [INFO] app.service.api - Request GET /api/v1/messages completed in 78ms
+2026-08-13T12:48:36,348 [WARNING] app.service.worker - Cache miss ratio 0.29 above threshold
+2026-08-14T13:49:43,349 [INFO] app.service.db - Session opened for user u1
+2026-08-15T14:50:50,350 [INFO] app.service.worker - Session opened for user u11
+2026-08-16T15:51:57,351 [WARNING] app.service.api - Retry 41/5 for job worker-41
+2026-08-17T16:52:04,352 [INFO] app.service.api - Session opened for user u25
+2026-08-18T17:53:11,353 [WARNING] app.service.worker - Cache miss ratio 0.38 above threshold
+2026-08-19T18:54:18,354 [INFO] app.service.worker - Worker worker-86 heartbeat ok
+2026-08-20T19:55:25,355 [WARNING] app.service.db - Retry 42/5 for job worker-42
+2026-08-21T20:56:32,356 [DEBUG] app.service.worker - state=17 queue_depth=17
+2026-08-22T21:57:39,357 [DEBUG] app.service.api - state=91 queue_depth=91
+2026-08-23T22:58:46,358 [CRITICAL] app.service.db - Disk usage 966% on /var/log -- shedding load
+2026-08-24T23:59:53,359 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-25T00:00:00,360 [INFO] app.service.worker - Session opened for user u51
+2026-08-26T01:01:07,361 [INFO] app.service.db - Worker worker-92 heartbeat ok
+2026-08-27T02:02:14,362 [WARNING] app.service.worker - Retry 17/5 for job worker-17
+2026-08-28T03:03:21,363 [INFO] app.service.worker - Request GET /api/v1/messages completed in 95ms
+2026-08-01T04:04:28,364 [INFO] app.service.api - Request GET /api/v1/messages completed in 49ms
+2026-08-02T05:05:35,365 [WARNING] app.service.api - Retry 61/5 for job worker-61
+2026-08-03T06:06:42,366 [WARNING] app.service.db - Cache miss ratio 0.33 above threshold
+2026-08-04T07:07:49,367 [INFO] app.service.api - Session opened for user u7
+2026-08-05T08:08:56,368 [INFO] app.service.api - Request GET /api/v1/messages completed in 25ms
+2026-08-06T09:09:03,369 [INFO] app.service.api - Session opened for user u52
+2026-08-07T10:10:10,370 [DEBUG] app.service.worker - state=62 queue_depth=62
+2026-08-08T11:11:17,371 [INFO] app.service.db - Worker worker-84 heartbeat ok
+2026-08-09T12:12:24,372 [WARNING] app.service.api - Cache miss ratio 0.74 above threshold
+2026-08-10T13:13:31,373 [INFO] app.service.worker - Request GET /api/v1/messages completed in 37ms
+2026-08-11T14:14:38,374 [INFO] app.service.worker - Request GET /api/v1/messages completed in 33ms
+2026-08-12T15:15:45,375 [INFO] app.service.db - Request GET /api/v1/messages completed in 3ms
+2026-08-13T16:16:52,376 [INFO] app.service.db - Request GET /api/v1/messages completed in 81ms
+2026-08-14T17:17:59,377 [WARNING] app.service.api - Retry 62/5 for job worker-62
+2026-08-15T18:18:06,378 [INFO] app.service.worker - Worker worker-7 heartbeat ok
+2026-08-16T19:19:13,379 [ERROR] app.service.worker - Failed to parse payload for order_id=884211: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-17T20:20:20,380 [INFO] app.service.db - Request GET /api/v1/messages completed in 62ms
+2026-08-18T21:21:27,381 [INFO] app.service.db - Session opened for user u72
+2026-08-19T22:22:34,382 [WARNING] app.service.db - Cache miss ratio 0.25 above threshold
+2026-08-20T23:23:41,383 [INFO] app.service.worker - Worker worker-93 heartbeat ok
+2026-08-21T00:24:48,384 [WARNING] app.service.api - Retry 69/5 for job worker-69
+2026-08-22T01:25:55,385 [INFO] app.service.db - Worker worker-4 heartbeat ok
+2026-08-23T02:26:02,386 [ERROR] app.service.api - Failed to parse payload for order_id=884227: unexpected token
+2026-08-24T03:27:09,387 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-25T04:28:16,388 [INFO] app.service.api - Session opened for user u62
+2026-08-26T05:29:23,389 [INFO] app.service.db - Worker worker-80 heartbeat ok
+2026-08-27T06:30:30,390 [ERROR] app.service.api - Connection timeout connecting to db-42 at 10.0.0.8:5432 after 30000ms
+2026-08-28T07:31:37,391 [INFO] app.service.db - Worker worker-81 heartbeat ok
+2026-08-01T08:32:44,392 [INFO] app.service.api - Worker worker-84 heartbeat ok
+2026-08-02T09:33:51,393 [INFO] app.service.db - Worker worker-28 heartbeat ok
+2026-08-03T10:34:58,394 [WARNING] app.service.worker - Retry 39/5 for job worker-39
+2026-08-04T11:35:05,395 [WARNING] app.service.api - Retry 19/5 for job worker-19
+2026-08-05T12:36:12,396 [INFO] app.service.api - Worker worker-2 heartbeat ok
+2026-08-06T13:37:19,397 [INFO] app.service.api - Worker worker-42 heartbeat ok
+2026-08-07T14:38:26,398 [ERROR] app.service.db - Connection timeout connecting to db-9 at 10.0.0.3:5432 after 30000ms
+2026-08-08T15:39:33,399 [INFO] app.service.api - Worker worker-64 heartbeat ok
+2026-08-09T16:40:40,400 [INFO] app.service.db - Request GET /api/v1/messages completed in 9ms
+2026-08-10T17:41:47,401 [DEBUG] app.service.db - state=24 queue_depth=24
+2026-08-11T18:42:54,402 [INFO] app.service.api - Request GET /api/v1/messages completed in 94ms
+2026-08-12T19:43:01,403 [DEBUG] app.service.api - state=28 queue_depth=28
+2026-08-13T20:44:08,404 [INFO] app.service.worker - Session opened for user u55
+2026-08-14T21:45:15,405 [CRITICAL] app.service.worker - Disk usage 989% on /var/log -- shedding load
+2026-08-15T22:46:22,406 [INFO] app.service.db - Worker worker-50 heartbeat ok
+2026-08-16T23:47:29,407 [INFO] app.service.worker - Session opened for user u6
+2026-08-17T00:48:36,408 [INFO] app.service.db - Worker worker-37 heartbeat ok
+2026-08-18T01:49:43,409 [INFO] app.service.api - Worker worker-69 heartbeat ok
+2026-08-19T02:50:50,410 [INFO] app.service.worker - Worker worker-80 heartbeat ok
+2026-08-20T03:51:57,411 [WARNING] app.service.worker - Cache miss ratio 0.52 above threshold
+2026-08-21T04:52:04,412 [INFO] app.service.db - Request GET /api/v1/messages completed in 15ms
+2026-08-22T05:53:11,413 [WARNING] app.service.api - Retry 14/5 for job worker-14
+2026-08-23T06:54:18,414 [DEBUG] app.service.api - state=24 queue_depth=24
+2026-08-24T07:55:25,415 [INFO] app.service.worker - Worker worker-45 heartbeat ok
+2026-08-25T08:56:32,416 [WARNING] app.service.db - Retry 26/5 for job worker-26
+2026-08-26T09:57:39,417 [WARNING] app.service.api - Retry 14/5 for job worker-14
+2026-08-27T10:58:46,418 [INFO] app.service.api - Worker worker-10 heartbeat ok
+2026-08-28T11:59:53,419 [INFO] app.service.api - Session opened for user u20
+2026-08-01T12:00:00,420 [WARNING] app.service.api - Cache miss ratio 0.45 above threshold
+2026-08-02T13:01:07,421 [INFO] app.service.db - Request GET /api/v1/messages completed in 24ms
+2026-08-03T14:02:14,422 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-04T15:03:21,423 [DEBUG] app.service.api - state=69 queue_depth=69
+2026-08-05T16:04:28,424 [INFO] app.service.api - Session opened for user u72
+2026-08-06T17:05:35,425 [INFO] app.service.worker - Worker worker-41 heartbeat ok
+2026-08-07T18:06:42,426 [INFO] app.service.worker - Request GET /api/v1/messages completed in 27ms
+2026-08-08T19:07:49,427 [INFO] app.service.worker - Request GET /api/v1/messages completed in 75ms
+2026-08-09T20:08:56,428 [ERROR] app.service.api - Failed to parse payload for order_id=884234: unexpected token
+2026-08-10T21:09:03,429 [INFO] app.service.api - Request GET /api/v1/messages completed in 9ms
+2026-08-11T22:10:10,430 [INFO] app.service.db - Worker worker-99 heartbeat ok
+2026-08-12T23:11:17,431 [WARNING] app.service.worker - Retry 35/5 for job worker-35
+2026-08-13T00:12:24,432 [INFO] app.service.db - Session opened for user u36
+2026-08-14T01:13:31,433 [WARNING] app.service.api - Retry 45/5 for job worker-45
+2026-08-15T02:14:38,434 [WARNING] app.service.db - Retry 16/5 for job worker-16
+2026-08-16T03:15:45,435 [DEBUG] app.service.api - state=87 queue_depth=87
+2026-08-17T04:16:52,436 [WARNING] app.service.db - Cache miss ratio 0.26 above threshold
+2026-08-18T05:17:59,437 [INFO] app.service.worker - Worker worker-9 heartbeat ok
+2026-08-19T06:18:06,438 [INFO] app.service.worker - Worker worker-57 heartbeat ok
+2026-08-20T07:19:13,439 [INFO] app.service.api - Session opened for user u87
+2026-08-21T08:20:20,440 [ERROR] app.service.api - Failed to parse payload for order_id=884276: unexpected token
+2026-08-22T09:21:27,441 [WARNING] app.service.worker - Retry 14/5 for job worker-14
+2026-08-23T10:22:34,442 [INFO] app.service.api - Request GET /api/v1/messages completed in 47ms
+2026-08-24T11:23:41,443 [INFO] app.service.worker - Session opened for user u86
+2026-08-25T12:24:48,444 [DEBUG] app.service.api - state=86 queue_depth=86
+2026-08-26T13:25:55,445 [INFO] app.service.api - Worker worker-60 heartbeat ok
+2026-08-27T14:26:02,446 [INFO] app.service.worker - Session opened for user u8
+2026-08-28T15:27:09,447 [DEBUG] app.service.db - state=56 queue_depth=56
+2026-08-01T16:28:16,448 [INFO] app.service.api - Session opened for user u8
+2026-08-02T17:29:23,449 [DEBUG] app.service.worker - state=52 queue_depth=52
+2026-08-03T18:30:30,450 [INFO] app.service.api - Session opened for user u64
+2026-08-04T19:31:37,451 [INFO] app.service.db - Session opened for user u13
+2026-08-05T20:32:44,452 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-06T21:33:51,453 [DEBUG] app.service.db - state=16 queue_depth=16
+2026-08-07T22:34:58,454 [INFO] app.service.db - Request GET /api/v1/messages completed in 47ms
+2026-08-08T23:35:05,455 [CRITICAL] app.service.db - Disk usage 969% on /var/log -- shedding load
+2026-08-09T00:36:12,456 [INFO] app.service.db - Request GET /api/v1/messages completed in 65ms
+2026-08-10T01:37:19,457 [ERROR] app.service.api - Connection timeout connecting to db-85 at 10.0.0.3:5432 after 30000ms
+2026-08-11T02:38:26,458 [INFO] app.service.api - Worker worker-32 heartbeat ok
+2026-08-12T03:39:33,459 [INFO] app.service.worker - Request GET /api/v1/messages completed in 58ms
+2026-08-13T04:40:40,460 [INFO] app.service.api - Worker worker-14 heartbeat ok
+2026-08-14T05:41:47,461 [WARNING] app.service.db - Retry 80/5 for job worker-80
+2026-08-15T06:42:54,462 [INFO] app.service.api - Request GET /api/v1/messages completed in 20ms
+2026-08-16T07:43:01,463 [INFO] app.service.db - Session opened for user u21
+2026-08-17T08:44:08,464 [INFO] app.service.db - Request GET /api/v1/messages completed in 15ms
+2026-08-18T09:45:15,465 [INFO] app.service.worker - Session opened for user u98
+2026-08-19T10:46:22,466 [INFO] app.service.api - Worker worker-28 heartbeat ok
+2026-08-20T11:47:29,467 [INFO] app.service.db - Session opened for user u43
+2026-08-21T12:48:36,468 [WARNING] app.service.worker - Retry 65/5 for job worker-65
+2026-08-22T13:49:43,469 [INFO] app.service.db - Worker worker-95 heartbeat ok
+2026-08-23T14:50:50,470 [WARNING] app.service.db - Retry 62/5 for job worker-62
+2026-08-24T15:51:57,471 [INFO] app.service.db - Worker worker-58 heartbeat ok
+2026-08-25T16:52:04,472 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-26T17:53:11,473 [INFO] app.service.worker - Request GET /api/v1/messages completed in 13ms
+2026-08-27T18:54:18,474 [ERROR] app.service.db - Failed to parse payload for order_id=884230: unexpected token
+2026-08-28T19:55:25,475 [INFO] app.service.api - Session opened for user u1
+2026-08-01T20:56:32,476 [DEBUG] app.service.db - state=77 queue_depth=77
+2026-08-02T21:57:39,477 [INFO] app.service.worker - Request GET /api/v1/messages completed in 98ms
+2026-08-03T22:58:46,478 [INFO] app.service.api - Worker worker-67 heartbeat ok
+2026-08-04T23:59:53,479 [ERROR] app.service.api - Connection timeout connecting to db-33 at 10.0.0.6:5432 after 30000ms
+2026-08-05T00:00:00,480 [DEBUG] app.service.worker - state=48 queue_depth=48
+2026-08-06T01:01:07,481 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-07T02:02:14,482 [WARNING] app.service.db - Cache miss ratio 0.5 above threshold
+2026-08-08T03:03:21,483 [WARNING] app.service.db - Retry 83/5 for job worker-83
+2026-08-09T04:04:28,484 [ERROR] app.service.api - Failed to parse payload for order_id=884251: unexpected token
+2026-08-10T05:05:35,485 [DEBUG] app.service.worker - state=92 queue_depth=92
+2026-08-11T06:06:42,486 [INFO] app.service.api - Session opened for user u75
+2026-08-12T07:07:49,487 [INFO] app.service.db - Worker worker-43 heartbeat ok
+2026-08-13T08:08:56,488 [WARNING] app.service.db - Retry 88/5 for job worker-88
+2026-08-14T09:09:03,489 [INFO] app.service.worker - Worker worker-56 heartbeat ok
+2026-08-15T10:10:10,490 [INFO] app.service.worker - Session opened for user u10
+2026-08-16T11:11:17,491 [DEBUG] app.service.db - state=86 queue_depth=86
+2026-08-17T12:12:24,492 [INFO] app.service.db - Worker worker-89 heartbeat ok
+2026-08-18T13:13:31,493 [DEBUG] app.service.api - state=13 queue_depth=13
+2026-08-19T14:14:38,494 [INFO] app.service.api - Request GET /api/v1/messages completed in 20ms
+2026-08-20T15:15:45,495 [INFO] app.service.db - Request GET /api/v1/messages completed in 49ms
+2026-08-21T16:16:52,496 [INFO] app.service.db - Worker worker-56 heartbeat ok
+2026-08-22T17:17:59,497 [INFO] app.service.api - Worker worker-71 heartbeat ok
+2026-08-23T18:18:06,498 [INFO] app.service.api - Worker worker-2 heartbeat ok
+2026-08-24T19:19:13,499 [INFO] app.service.db - Session opened for user u49
+2026-08-25T20:20:20,500 [INFO] app.service.db - Session opened for user u46
+2026-08-26T21:21:27,501 [INFO] app.service.db - Worker worker-12 heartbeat ok
+2026-08-27T22:22:34,502 [WARNING] app.service.db - Cache miss ratio 0.94 above threshold
+2026-08-28T23:23:41,503 [INFO] app.service.api - Worker worker-33 heartbeat ok
+2026-08-01T00:24:48,504 [WARNING] app.service.db - Retry 80/5 for job worker-80
+2026-08-02T01:25:55,505 [INFO] app.service.worker - Worker worker-59 heartbeat ok
+2026-08-03T02:26:02,506 [INFO] app.service.api - Request GET /api/v1/messages completed in 97ms
+2026-08-04T03:27:09,507 [INFO] app.service.api - Session opened for user u5
+2026-08-05T04:28:16,508 [INFO] app.service.db - Session opened for user u43
+2026-08-06T05:29:23,509 [WARNING] app.service.db - Cache miss ratio 0.13 above threshold
+2026-08-07T06:30:30,510 [INFO] app.service.api - Request GET /api/v1/messages completed in 69ms
+2026-08-08T07:31:37,511 [CRITICAL] app.service.api - Disk usage 975% on /var/log -- shedding load
+2026-08-09T08:32:44,512 [INFO] app.service.worker - Worker worker-42 heartbeat ok
+2026-08-10T09:33:51,513 [CRITICAL] app.service.worker - Disk usage 938% on /var/log -- shedding load
+2026-08-11T10:34:58,514 [CRITICAL] app.service.db - Disk usage 93% on /var/log -- shedding load
+2026-08-12T11:35:05,515 [INFO] app.service.worker - Worker worker-38 heartbeat ok
+2026-08-13T12:36:12,516 [WARNING] app.service.db - Retry 63/5 for job worker-63
+2026-08-14T13:37:19,517 [WARNING] app.service.db - Cache miss ratio 0.66 above threshold
+2026-08-15T14:38:26,518 [INFO] app.service.worker - Request GET /api/v1/messages completed in 17ms
+2026-08-16T15:39:33,519 [INFO] app.service.api - Session opened for user u69
+2026-08-17T16:40:40,520 [INFO] app.service.db - Worker worker-84 heartbeat ok
+2026-08-18T17:41:47,521 [INFO] app.service.db - Session opened for user u45
+2026-08-19T18:42:54,522 [DEBUG] app.service.worker - state=35 queue_depth=35
+2026-08-20T19:43:01,523 [INFO] app.service.worker - Request GET /api/v1/messages completed in 15ms
+2026-08-21T20:44:08,524 [INFO] app.service.api - Request GET /api/v1/messages completed in 73ms
+2026-08-22T21:45:15,525 [WARNING] app.service.db - Cache miss ratio 0.46 above threshold
+2026-08-23T22:46:22,526 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-24T23:47:29,527 [INFO] app.service.worker - Session opened for user u70
+2026-08-25T00:48:36,528 [INFO] app.service.api - Session opened for user u12
+2026-08-26T01:49:43,529 [INFO] app.service.worker - Request GET /api/v1/messages completed in 14ms
+2026-08-27T02:50:50,530 [WARNING] app.service.api - Retry 89/5 for job worker-89
+2026-08-28T03:51:57,531 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-01T04:52:04,532 [WARNING] app.service.api - Cache miss ratio 0.70 above threshold
+2026-08-02T05:53:11,533 [INFO] app.service.worker - Request GET /api/v1/messages completed in 63ms
+2026-08-03T06:54:18,534 [DEBUG] app.service.api - state=99 queue_depth=99
+2026-08-04T07:55:25,535 [DEBUG] app.service.api - state=14 queue_depth=14
+2026-08-05T08:56:32,536 [INFO] app.service.api - Worker worker-54 heartbeat ok
+2026-08-06T09:57:39,537 [WARNING] app.service.worker - Retry 78/5 for job worker-78
+2026-08-07T10:58:46,538 [ERROR] app.service.api - Connection timeout connecting to db-51 at 10.0.0.5:5432 after 30000ms
+2026-08-08T11:59:53,539 [INFO] app.service.db - Worker worker-2 heartbeat ok
+2026-08-09T12:00:00,540 [WARNING] app.service.worker - Cache miss ratio 0.93 above threshold
+2026-08-10T13:01:07,541 [INFO] app.service.db - Worker worker-84 heartbeat ok
+2026-08-11T14:02:14,542 [DEBUG] app.service.db - state=23 queue_depth=23
+2026-08-12T15:03:21,543 [WARNING] app.service.db - Cache miss ratio 0.62 above threshold
+2026-08-13T16:04:28,544 [INFO] app.service.api - Worker worker-31 heartbeat ok
+2026-08-14T17:05:35,545 [INFO] app.service.db - Session opened for user u74
+2026-08-15T18:06:42,546 [WARNING] app.service.api - Retry 39/5 for job worker-39
+2026-08-16T19:07:49,547 [INFO] app.service.worker - Request GET /api/v1/messages completed in 5ms
+2026-08-17T20:08:56,548 [INFO] app.service.worker - Request GET /api/v1/messages completed in 98ms
+2026-08-18T21:09:03,549 [INFO] app.service.db - Request GET /api/v1/messages completed in 72ms
+2026-08-19T22:10:10,550 [INFO] app.service.api - Worker worker-10 heartbeat ok
+2026-08-20T23:11:17,551 [DEBUG] app.service.db - state=86 queue_depth=86
+2026-08-21T00:12:24,552 [INFO] app.service.db - Request GET /api/v1/messages completed in 37ms
+2026-08-22T01:13:31,553 [INFO] app.service.api - Request GET /api/v1/messages completed in 64ms
+2026-08-23T02:14:38,554 [INFO] app.service.db - Request GET /api/v1/messages completed in 21ms
+2026-08-24T03:15:45,555 [ERROR] app.service.db - Connection timeout connecting to db-29 at 10.0.0.7:5432 after 30000ms
+2026-08-25T04:16:52,556 [DEBUG] app.service.api - state=92 queue_depth=92
+2026-08-26T05:17:59,557 [DEBUG] app.service.api - state=31 queue_depth=31
+2026-08-27T06:18:06,558 [INFO] app.service.worker - Request GET /api/v1/messages completed in 86ms
+2026-08-28T07:19:13,559 [INFO] app.service.api - Session opened for user u35
+2026-08-01T08:20:20,560 [DEBUG] app.service.api - state=24 queue_depth=24
+2026-08-02T09:21:27,561 [INFO] app.service.db - Request GET /api/v1/messages completed in 42ms
+2026-08-03T10:22:34,562 [INFO] app.service.worker - Worker worker-67 heartbeat ok
+2026-08-04T11:23:41,563 [INFO] app.service.db - Session opened for user u12
+2026-08-05T12:24:48,564 [INFO] app.service.api - Request GET /api/v1/messages completed in 40ms
+2026-08-06T13:25:55,565 [WARNING] app.service.worker - Cache miss ratio 0.73 above threshold
+2026-08-07T14:26:02,566 [INFO] app.service.db - Session opened for user u45
+2026-08-08T15:27:09,567 [INFO] app.service.api - Request GET /api/v1/messages completed in 61ms
+2026-08-09T16:28:16,568 [INFO] app.service.db - Session opened for user u70
+2026-08-10T17:29:23,569 [INFO] app.service.api - Request GET /api/v1/messages completed in 52ms
+2026-08-11T18:30:30,570 [DEBUG] app.service.api - state=29 queue_depth=29
+2026-08-12T19:31:37,571 [INFO] app.service.worker - Worker worker-84 heartbeat ok
+2026-08-13T20:32:44,572 [INFO] app.service.db - Request GET /api/v1/messages completed in 2ms
+2026-08-14T21:33:51,573 [INFO] app.service.db - Request GET /api/v1/messages completed in 34ms
+2026-08-15T22:34:58,574 [INFO] app.service.worker - Worker worker-96 heartbeat ok
+2026-08-16T23:35:05,575 [WARNING] app.service.worker - Retry 75/5 for job worker-75
+2026-08-17T00:36:12,576 [INFO] app.service.db - Session opened for user u33
+2026-08-18T01:37:19,577 [DEBUG] app.service.db - state=30 queue_depth=30
+2026-08-19T02:38:26,578 [INFO] app.service.db - Session opened for user u98
+2026-08-20T03:39:33,579 [DEBUG] app.service.db - state=31 queue_depth=31
+2026-08-21T04:40:40,580 [WARNING] app.service.db - Cache miss ratio 0.82 above threshold
+2026-08-22T05:41:47,581 [INFO] app.service.db - Request GET /api/v1/messages completed in 62ms
+2026-08-23T06:42:54,582 [INFO] app.service.worker - Session opened for user u49
+2026-08-24T07:43:01,583 [INFO] app.service.db - Worker worker-64 heartbeat ok
+2026-08-25T08:44:08,584 [ERROR] app.service.db - Failed to parse payload for order_id=884282: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-26T09:45:15,585 [WARNING] app.service.db - Retry 69/5 for job worker-69
+2026-08-27T10:46:22,586 [ERROR] app.service.api - Failed to parse payload for order_id=884231: unexpected token
+2026-08-28T11:47:29,587 [WARNING] app.service.db - Retry 46/5 for job worker-46
+2026-08-01T12:48:36,588 [DEBUG] app.service.db - state=62 queue_depth=62
+2026-08-02T13:49:43,589 [INFO] app.service.worker - Session opened for user u65
+2026-08-03T14:50:50,590 [DEBUG] app.service.worker - state=28 queue_depth=28
+2026-08-04T15:51:57,591 [INFO] app.service.api - Session opened for user u88
+2026-08-05T16:52:04,592 [INFO] app.service.db - Session opened for user u39
+2026-08-06T17:53:11,593 [CRITICAL] app.service.db - Disk usage 939% on /var/log -- shedding load
+2026-08-07T18:54:18,594 [ERROR] app.service.worker - Connection timeout connecting to db-85 at 10.0.0.7:5432 after 30000ms
+2026-08-08T19:55:25,595 [INFO] app.service.db - Session opened for user u83
+2026-08-09T20:56:32,596 [DEBUG] app.service.api - state=15 queue_depth=15
+2026-08-10T21:57:39,597 [DEBUG] app.service.db - state=40 queue_depth=40
+2026-08-11T22:58:46,598 [WARNING] app.service.worker - Cache miss ratio 0.80 above threshold
+2026-08-12T23:59:53,599 [INFO] app.service.api - Session opened for user u56
+2026-08-13T00:00:00,600 [INFO] app.service.worker - Request GET /api/v1/messages completed in 34ms
+2026-08-14T01:01:07,601 [INFO] app.service.api - Worker worker-50 heartbeat ok
+2026-08-15T02:02:14,602 [ERROR] app.service.db - Connection timeout connecting to db-30 at 10.0.0.5:5432 after 30000ms
+2026-08-16T03:03:21,603 [INFO] app.service.api - Session opened for user u67
+2026-08-17T04:04:28,604 [INFO] app.service.worker - Worker worker-24 heartbeat ok
+2026-08-18T05:05:35,605 [INFO] app.service.api - Session opened for user u43
+2026-08-19T06:06:42,606 [DEBUG] app.service.api - state=38 queue_depth=38
+2026-08-20T07:07:49,607 [DEBUG] app.service.api - state=43 queue_depth=43
+2026-08-21T08:08:56,608 [WARNING] app.service.api - Cache miss ratio 0.5 above threshold
+2026-08-22T09:09:03,609 [INFO] app.service.api - Session opened for user u61
+2026-08-23T10:10:10,610 [INFO] app.service.db - Session opened for user u31
+2026-08-24T11:11:17,611 [INFO] app.service.db - Request GET /api/v1/messages completed in 7ms
+2026-08-25T12:12:24,612 [INFO] app.service.worker - Session opened for user u54
+2026-08-26T13:13:31,613 [INFO] app.service.db - Request GET /api/v1/messages completed in 11ms
+2026-08-27T14:14:38,614 [INFO] app.service.worker - Worker worker-54 heartbeat ok
+2026-08-28T15:15:45,615 [INFO] app.service.api - Worker worker-68 heartbeat ok
+2026-08-01T16:16:52,616 [WARNING] app.service.worker - Retry 20/5 for job worker-20
+2026-08-02T17:17:59,617 [INFO] app.service.worker - Worker worker-75 heartbeat ok
+2026-08-03T18:18:06,618 [WARNING] app.service.worker - Retry 8/5 for job worker-8
+2026-08-04T19:19:13,619 [ERROR] app.service.db - Connection timeout connecting to db-25 at 10.0.0.6:5432 after 30000ms
+2026-08-05T20:20:20,620 [ERROR] app.service.api - Connection timeout connecting to db-35 at 10.0.0.9:5432 after 30000ms
+2026-08-06T21:21:27,621 [INFO] app.service.db - Request GET /api/v1/messages completed in 64ms
+2026-08-07T22:22:34,622 [INFO] app.service.api - Session opened for user u88
+2026-08-08T23:23:41,623 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-09T00:24:48,624 [INFO] app.service.db - Request GET /api/v1/messages completed in 10ms
+2026-08-10T01:25:55,625 [INFO] app.service.api - Session opened for user u27
+2026-08-11T02:26:02,626 [INFO] app.service.worker - Worker worker-41 heartbeat ok
+2026-08-12T03:27:09,627 [INFO] app.service.api - Request GET /api/v1/messages completed in 93ms
+2026-08-13T04:28:16,628 [INFO] app.service.db - Request GET /api/v1/messages completed in 5ms
+2026-08-14T05:29:23,629 [INFO] app.service.api - Worker worker-47 heartbeat ok
+2026-08-15T06:30:30,630 [WARNING] app.service.db - Cache miss ratio 0.28 above threshold
+2026-08-16T07:31:37,631 [INFO] app.service.worker - Worker worker-99 heartbeat ok
+2026-08-17T08:32:44,632 [INFO] app.service.worker - Worker worker-71 heartbeat ok
+2026-08-18T09:33:51,633 [INFO] app.service.worker - Session opened for user u52
+2026-08-19T10:34:58,634 [INFO] app.service.api - Worker worker-93 heartbeat ok
+2026-08-20T11:35:05,635 [INFO] app.service.db - Session opened for user u29
+2026-08-21T12:36:12,636 [INFO] app.service.db - Session opened for user u73
+2026-08-22T13:37:19,637 [ERROR] app.service.db - Failed to parse payload for order_id=884299: unexpected token
+2026-08-23T14:38:26,638 [INFO] app.service.db - Request GET /api/v1/messages completed in 39ms
+2026-08-24T15:39:33,639 [INFO] app.service.api - Worker worker-64 heartbeat ok
+2026-08-25T16:40:40,640 [INFO] app.service.db - Session opened for user u9
+2026-08-26T17:41:47,641 [INFO] app.service.db - Session opened for user u33
+2026-08-27T18:42:54,642 [INFO] app.service.db - Session opened for user u70
+2026-08-28T19:43:01,643 [DEBUG] app.service.api - state=97 queue_depth=97
+2026-08-01T20:44:08,644 [INFO] app.service.api - Session opened for user u36
+2026-08-02T21:45:15,645 [INFO] app.service.db - Worker worker-22 heartbeat ok
+2026-08-03T22:46:22,646 [INFO] app.service.db - Worker worker-87 heartbeat ok
+2026-08-04T23:47:29,647 [ERROR] app.service.db - Connection timeout connecting to db-60 at 10.0.0.9:5432 after 30000ms
+2026-08-05T00:48:36,648 [DEBUG] app.service.db - state=56 queue_depth=56
+2026-08-06T01:49:43,649 [ERROR] app.service.worker - Failed to parse payload for order_id=884289: unexpected token
+2026-08-07T02:50:50,650 [INFO] app.service.worker - Worker worker-36 heartbeat ok
+2026-08-08T03:51:57,651 [INFO] app.service.worker - Session opened for user u4
+2026-08-09T04:52:04,652 [INFO] app.service.api - Worker worker-40 heartbeat ok
+2026-08-10T05:53:11,653 [WARNING] app.service.api - Retry 11/5 for job worker-11
+2026-08-11T06:54:18,654 [INFO] app.service.api - Worker worker-63 heartbeat ok
+2026-08-12T07:55:25,655 [INFO] app.service.worker - Request GET /api/v1/messages completed in 38ms
+2026-08-13T08:56:32,656 [WARNING] app.service.worker - Cache miss ratio 0.42 above threshold
+2026-08-14T09:57:39,657 [INFO] app.service.db - Request GET /api/v1/messages completed in 90ms
+2026-08-15T10:58:46,658 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-16T11:59:53,659 [WARNING] app.service.api - Cache miss ratio 0.83 above threshold
+2026-08-17T12:00:00,660 [INFO] app.service.api - Worker worker-24 heartbeat ok
+2026-08-18T13:01:07,661 [INFO] app.service.worker - Session opened for user u45
+2026-08-19T14:02:14,662 [INFO] app.service.api - Worker worker-62 heartbeat ok
+2026-08-20T15:03:21,663 [ERROR] app.service.worker - Failed to parse payload for order_id=884286: unexpected token
+2026-08-21T16:04:28,664 [INFO] app.service.worker - Session opened for user u75
+2026-08-22T17:05:35,665 [ERROR] app.service.worker - Connection timeout connecting to db-46 at 10.0.0.9:5432 after 30000ms
+2026-08-23T18:06:42,666 [INFO] app.service.api - Request GET /api/v1/messages completed in 54ms
+2026-08-24T19:07:49,667 [DEBUG] app.service.worker - state=23 queue_depth=23
+2026-08-25T20:08:56,668 [ERROR] app.service.worker - Connection timeout connecting to db-87 at 10.0.0.7:5432 after 30000ms
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-26T21:09:03,669 [INFO] app.service.worker - Request GET /api/v1/messages completed in 3ms
+2026-08-27T22:10:10,670 [WARNING] app.service.api - Retry 38/5 for job worker-38
+2026-08-28T23:11:17,671 [WARNING] app.service.db - Retry 40/5 for job worker-40
+2026-08-01T00:12:24,672 [INFO] app.service.api - Worker worker-15 heartbeat ok
+2026-08-02T01:13:31,673 [INFO] app.service.worker - Worker worker-66 heartbeat ok
+2026-08-03T02:14:38,674 [INFO] app.service.worker - Session opened for user u57
+2026-08-04T03:15:45,675 [INFO] app.service.db - Worker worker-65 heartbeat ok
+2026-08-05T04:16:52,676 [INFO] app.service.worker - Session opened for user u69
+2026-08-06T05:17:59,677 [INFO] app.service.db - Worker worker-51 heartbeat ok
+2026-08-07T06:18:06,678 [INFO] app.service.worker - Request GET /api/v1/messages completed in 59ms
+2026-08-08T07:19:13,679 [INFO] app.service.worker - Worker worker-88 heartbeat ok
+2026-08-09T08:20:20,680 [INFO] app.service.db - Session opened for user u12
+2026-08-10T09:21:27,681 [INFO] app.service.worker - Request GET /api/v1/messages completed in 84ms
+2026-08-11T10:22:34,682 [ERROR] app.service.worker - Connection timeout connecting to db-43 at 10.0.0.8:5432 after 30000ms
+2026-08-12T11:23:41,683 [INFO] app.service.worker - Worker worker-46 heartbeat ok
+2026-08-13T12:24:48,684 [INFO] app.service.api - Request GET /api/v1/messages completed in 19ms
+2026-08-14T13:25:55,685 [INFO] app.service.db - Request GET /api/v1/messages completed in 72ms
+2026-08-15T14:26:02,686 [INFO] app.service.worker - Session opened for user u8
+2026-08-16T15:27:09,687 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-17T16:28:16,688 [INFO] app.service.db - Session opened for user u74
+2026-08-18T17:29:23,689 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-19T18:30:30,690 [INFO] app.service.worker - Request GET /api/v1/messages completed in 67ms
+2026-08-20T19:31:37,691 [DEBUG] app.service.api - state=34 queue_depth=34
+2026-08-21T20:32:44,692 [INFO] app.service.api - Session opened for user u98
+2026-08-22T21:33:51,693 [ERROR] app.service.worker - Connection timeout connecting to db-92 at 10.0.0.4:5432 after 30000ms
+2026-08-23T22:34:58,694 [INFO] app.service.api - Session opened for user u61
+2026-08-24T23:35:05,695 [INFO] app.service.api - Session opened for user u41
+2026-08-25T00:36:12,696 [INFO] app.service.api - Session opened for user u73
+2026-08-26T01:37:19,697 [INFO] app.service.db - Session opened for user u50
+2026-08-27T02:38:26,698 [INFO] app.service.api - Session opened for user u31
+2026-08-28T03:39:33,699 [WARNING] app.service.worker - Retry 11/5 for job worker-11
+2026-08-01T04:40:40,700 [WARNING] app.service.db - Retry 38/5 for job worker-38
+2026-08-02T05:41:47,701 [DEBUG] app.service.worker - state=84 queue_depth=84
+2026-08-03T06:42:54,702 [DEBUG] app.service.db - state=64 queue_depth=64
+2026-08-04T07:43:01,703 [ERROR] app.service.worker - Failed to parse payload for order_id=884250: unexpected token
+2026-08-05T08:44:08,704 [ERROR] app.service.db - Connection timeout connecting to db-78 at 10.0.0.7:5432 after 30000ms
+2026-08-06T09:45:15,705 [INFO] app.service.worker - Session opened for user u78
+2026-08-07T10:46:22,706 [WARNING] app.service.db - Retry 85/5 for job worker-85
+2026-08-08T11:47:29,707 [INFO] app.service.worker - Worker worker-6 heartbeat ok
+2026-08-09T12:48:36,708 [INFO] app.service.api - Request GET /api/v1/messages completed in 25ms
+2026-08-10T13:49:43,709 [INFO] app.service.worker - Worker worker-49 heartbeat ok
+2026-08-11T14:50:50,710 [INFO] app.service.api - Session opened for user u45
+2026-08-12T15:51:57,711 [WARNING] app.service.worker - Retry 5/5 for job worker-5
+2026-08-13T16:52:04,712 [WARNING] app.service.api - Cache miss ratio 0.12 above threshold
+2026-08-14T17:53:11,713 [WARNING] app.service.worker - Cache miss ratio 0.5 above threshold
+2026-08-15T18:54:18,714 [WARNING] app.service.api - Retry 58/5 for job worker-58
+2026-08-16T19:55:25,715 [INFO] app.service.worker - Request GET /api/v1/messages completed in 67ms
+2026-08-17T20:56:32,716 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-18T21:57:39,717 [INFO] app.service.db - Request GET /api/v1/messages completed in 1ms
+2026-08-19T22:58:46,718 [INFO] app.service.api - Session opened for user u25
+2026-08-20T23:59:53,719 [DEBUG] app.service.db - state=76 queue_depth=76
+2026-08-21T00:00:00,720 [INFO] app.service.worker - Worker worker-17 heartbeat ok
+2026-08-22T01:01:07,721 [INFO] app.service.db - Session opened for user u91
+2026-08-23T02:02:14,722 [DEBUG] app.service.api - state=34 queue_depth=34
+2026-08-24T03:03:21,723 [INFO] app.service.api - Request GET /api/v1/messages completed in 90ms
+2026-08-25T04:04:28,724 [INFO] app.service.db - Worker worker-15 heartbeat ok
+2026-08-26T05:05:35,725 [INFO] app.service.db - Session opened for user u76
+2026-08-27T06:06:42,726 [DEBUG] app.service.db - state=84 queue_depth=84
+2026-08-28T07:07:49,727 [DEBUG] app.service.api - state=34 queue_depth=34
+2026-08-01T08:08:56,728 [INFO] app.service.api - Request GET /api/v1/messages completed in 84ms
+2026-08-02T09:09:03,729 [INFO] app.service.db - Session opened for user u27
+2026-08-03T10:10:10,730 [DEBUG] app.service.db - state=25 queue_depth=25
+2026-08-04T11:11:17,731 [INFO] app.service.db - Request GET /api/v1/messages completed in 24ms
+2026-08-05T12:12:24,732 [INFO] app.service.api - Session opened for user u70
+2026-08-06T13:13:31,733 [WARNING] app.service.worker - Cache miss ratio 0.1 above threshold
+2026-08-07T14:14:38,734 [ERROR] app.service.worker - Connection timeout connecting to db-43 at 10.0.0.6:5432 after 30000ms
+2026-08-08T15:15:45,735 [INFO] app.service.api - Request GET /api/v1/messages completed in 56ms
+2026-08-09T16:16:52,736 [INFO] app.service.worker - Request GET /api/v1/messages completed in 60ms
+2026-08-10T17:17:59,737 [DEBUG] app.service.db - state=35 queue_depth=35
+2026-08-11T18:18:06,738 [INFO] app.service.db - Request GET /api/v1/messages completed in 93ms
+2026-08-12T19:19:13,739 [INFO] app.service.api - Session opened for user u84
+2026-08-13T20:20:20,740 [CRITICAL] app.service.worker - Disk usage 921% on /var/log -- shedding load
+2026-08-14T21:21:27,741 [INFO] app.service.worker - Request GET /api/v1/messages completed in 94ms
+2026-08-15T22:22:34,742 [INFO] app.service.db - Session opened for user u83
+2026-08-16T23:23:41,743 [INFO] app.service.api - Request GET /api/v1/messages completed in 59ms
+2026-08-17T00:24:48,744 [INFO] app.service.db - Session opened for user u48
+2026-08-18T01:25:55,745 [ERROR] app.service.api - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-19T02:26:02,746 [INFO] app.service.api - Request GET /api/v1/messages completed in 69ms
+2026-08-20T03:27:09,747 [CRITICAL] app.service.worker - Disk usage 990% on /var/log -- shedding load
+2026-08-21T04:28:16,748 [DEBUG] app.service.db - state=86 queue_depth=86
+2026-08-22T05:29:23,749 [INFO] app.service.worker - Session opened for user u75
+2026-08-23T06:30:30,750 [INFO] app.service.worker - Session opened for user u42
+2026-08-24T07:31:37,751 [INFO] app.service.worker - Worker worker-55 heartbeat ok
+2026-08-25T08:32:44,752 [WARNING] app.service.db - Cache miss ratio 0.34 above threshold
+2026-08-26T09:33:51,753 [INFO] app.service.api - Session opened for user u66
+2026-08-27T10:34:58,754 [ERROR] app.service.db - Connection timeout connecting to db-78 at 10.0.0.7:5432 after 30000ms
+2026-08-28T11:35:05,755 [DEBUG] app.service.worker - state=38 queue_depth=38
+2026-08-01T12:36:12,756 [INFO] app.service.db - Session opened for user u36
+2026-08-02T13:37:19,757 [DEBUG] app.service.worker - state=62 queue_depth=62
+2026-08-03T14:38:26,758 [INFO] app.service.api - Worker worker-16 heartbeat ok
+2026-08-04T15:39:33,759 [INFO] app.service.api - Session opened for user u87
+2026-08-05T16:40:40,760 [INFO] app.service.db - Session opened for user u13
+2026-08-06T17:41:47,761 [INFO] app.service.worker - Worker worker-38 heartbeat ok
+2026-08-07T18:42:54,762 [INFO] app.service.worker - Request GET /api/v1/messages completed in 2ms
+2026-08-08T19:43:01,763 [INFO] app.service.api - Worker worker-17 heartbeat ok
+2026-08-09T20:44:08,764 [WARNING] app.service.worker - Retry 87/5 for job worker-87
+2026-08-10T21:45:15,765 [WARNING] app.service.api - Cache miss ratio 0.78 above threshold
+2026-08-11T22:46:22,766 [INFO] app.service.db - Request GET /api/v1/messages completed in 91ms
+2026-08-12T23:47:29,767 [INFO] app.service.api - Request GET /api/v1/messages completed in 71ms
+2026-08-13T00:48:36,768 [DEBUG] app.service.db - state=61 queue_depth=61
+2026-08-14T01:49:43,769 [DEBUG] app.service.api - state=6 queue_depth=6
+2026-08-15T02:50:50,770 [INFO] app.service.db - Worker worker-54 heartbeat ok
+2026-08-16T03:51:57,771 [INFO] app.service.db - Request GET /api/v1/messages completed in 21ms
+2026-08-17T04:52:04,772 [INFO] app.service.api - Worker worker-93 heartbeat ok
+2026-08-18T05:53:11,773 [DEBUG] app.service.api - state=65 queue_depth=65
+2026-08-19T06:54:18,774 [WARNING] app.service.api - Cache miss ratio 0.22 above threshold
+2026-08-20T07:55:25,775 [INFO] app.service.worker - Session opened for user u34
+2026-08-21T08:56:32,776 [INFO] app.service.worker - Worker worker-94 heartbeat ok
+2026-08-22T09:57:39,777 [INFO] app.service.worker - Request GET /api/v1/messages completed in 13ms
+2026-08-23T10:58:46,778 [WARNING] app.service.db - Cache miss ratio 0.83 above threshold
+2026-08-24T11:59:53,779 [INFO] app.service.api - Worker worker-23 heartbeat ok
+2026-08-25T12:00:00,780 [DEBUG] app.service.worker - state=32 queue_depth=32
+2026-08-26T13:01:07,781 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-27T14:02:14,782 [INFO] app.service.db - Worker worker-47 heartbeat ok
+2026-08-28T15:03:21,783 [INFO] app.service.db - Worker worker-46 heartbeat ok
+2026-08-01T16:04:28,784 [INFO] app.service.api - Session opened for user u37
+2026-08-02T17:05:35,785 [INFO] app.service.db - Request GET /api/v1/messages completed in 50ms
+2026-08-03T18:06:42,786 [INFO] app.service.db - Request GET /api/v1/messages completed in 76ms
+2026-08-04T19:07:49,787 [INFO] app.service.api - Session opened for user u82
+2026-08-05T20:08:56,788 [INFO] app.service.api - Worker worker-13 heartbeat ok
+2026-08-06T21:09:03,789 [INFO] app.service.api - Worker worker-38 heartbeat ok
+2026-08-07T22:10:10,790 [INFO] app.service.worker - Worker worker-62 heartbeat ok
+2026-08-08T23:11:17,791 [WARNING] app.service.db - Cache miss ratio 0.25 above threshold
+2026-08-09T00:12:24,792 [CRITICAL] app.service.api - Disk usage 911% on /var/log -- shedding load
+2026-08-10T01:13:31,793 [WARNING] app.service.worker - Cache miss ratio 0.63 above threshold
+2026-08-11T02:14:38,794 [INFO] app.service.db - Session opened for user u57
+2026-08-12T03:15:45,795 [WARNING] app.service.db - Retry 80/5 for job worker-80
+2026-08-13T04:16:52,796 [CRITICAL] app.service.worker - Disk usage 912% on /var/log -- shedding load
+2026-08-14T05:17:59,797 [INFO] app.service.worker - Request GET /api/v1/messages completed in 12ms
+2026-08-15T06:18:06,798 [INFO] app.service.db - Request GET /api/v1/messages completed in 41ms
+2026-08-16T07:19:13,799 [INFO] app.service.db - Request GET /api/v1/messages completed in 83ms
+2026-08-17T08:20:20,800 [INFO] app.service.worker - Worker worker-16 heartbeat ok
+2026-08-18T09:21:27,801 [INFO] app.service.worker - Worker worker-96 heartbeat ok
+2026-08-19T10:22:34,802 [ERROR] app.service.worker - Connection timeout connecting to db-7 at 10.0.0.4:5432 after 30000ms
+2026-08-20T11:23:41,803 [INFO] app.service.db - Request GET /api/v1/messages completed in 18ms
+2026-08-21T12:24:48,804 [WARNING] app.service.worker - Cache miss ratio 0.79 above threshold
+2026-08-22T13:25:55,805 [CRITICAL] app.service.db - Disk usage 954% on /var/log -- shedding load
+2026-08-23T14:26:02,806 [INFO] app.service.api - Worker worker-28 heartbeat ok
+2026-08-24T15:27:09,807 [INFO] app.service.worker - Session opened for user u76
+2026-08-25T16:28:16,808 [INFO] app.service.worker - Session opened for user u27
+2026-08-26T17:29:23,809 [INFO] app.service.api - Worker worker-87 heartbeat ok
+2026-08-27T18:30:30,810 [CRITICAL] app.service.api - Disk usage 977% on /var/log -- shedding load
+2026-08-28T19:31:37,811 [INFO] app.service.worker - Session opened for user u63
+2026-08-01T20:32:44,812 [DEBUG] app.service.api - state=84 queue_depth=84
+2026-08-02T21:33:51,813 [INFO] app.service.worker - Worker worker-57 heartbeat ok
+2026-08-03T22:34:58,814 [INFO] app.service.worker - Worker worker-27 heartbeat ok
+2026-08-04T23:35:05,815 [INFO] app.service.api - Worker worker-12 heartbeat ok
+2026-08-05T00:36:12,816 [INFO] app.service.db - Request GET /api/v1/messages completed in 12ms
+2026-08-06T01:37:19,817 [INFO] app.service.worker - Session opened for user u45
+2026-08-07T02:38:26,818 [DEBUG] app.service.api - state=60 queue_depth=60
+2026-08-08T03:39:33,819 [INFO] app.service.worker - Session opened for user u92
+2026-08-09T04:40:40,820 [DEBUG] app.service.worker - state=19 queue_depth=19
+2026-08-10T05:41:47,821 [ERROR] app.service.worker - Failed to parse payload for order_id=884246: unexpected token
+2026-08-11T06:42:54,822 [INFO] app.service.api - Session opened for user u45
+2026-08-12T07:43:01,823 [ERROR] app.service.db - Connection timeout connecting to db-15 at 10.0.0.6:5432 after 30000ms
+2026-08-13T08:44:08,824 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-14T09:45:15,825 [CRITICAL] app.service.api - Disk usage 957% on /var/log -- shedding load
+2026-08-15T10:46:22,826 [WARNING] app.service.api - Retry 25/5 for job worker-25
+2026-08-16T11:47:29,827 [INFO] app.service.worker - Request GET /api/v1/messages completed in 39ms
+2026-08-17T12:48:36,828 [INFO] app.service.api - Worker worker-61 heartbeat ok
+2026-08-18T13:49:43,829 [INFO] app.service.api - Worker worker-39 heartbeat ok
+2026-08-19T14:50:50,830 [DEBUG] app.service.api - state=22 queue_depth=22
+2026-08-20T15:51:57,831 [WARNING] app.service.api - Retry 59/5 for job worker-59
+2026-08-21T16:52:04,832 [DEBUG] app.service.api - state=76 queue_depth=76
+2026-08-22T17:53:11,833 [WARNING] app.service.worker - Cache miss ratio 0.5 above threshold
+2026-08-23T18:54:18,834 [INFO] app.service.db - Worker worker-52 heartbeat ok
+2026-08-24T19:55:25,835 [INFO] app.service.api - Worker worker-53 heartbeat ok
+2026-08-25T20:56:32,836 [INFO] app.service.db - Session opened for user u57
+2026-08-26T21:57:39,837 [INFO] app.service.db - Request GET /api/v1/messages completed in 53ms
+2026-08-27T22:58:46,838 [INFO] app.service.worker - Worker worker-69 heartbeat ok
+2026-08-28T23:59:53,839 [INFO] app.service.worker - Worker worker-6 heartbeat ok
+2026-08-01T00:00:00,840 [INFO] app.service.api - Worker worker-35 heartbeat ok
+2026-08-02T01:01:07,841 [ERROR] app.service.api - Failed to parse payload for order_id=884215: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-03T02:02:14,842 [INFO] app.service.worker - Request GET /api/v1/messages completed in 4ms
+2026-08-04T03:03:21,843 [ERROR] app.service.worker - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-05T04:04:28,844 [INFO] app.service.worker - Session opened for user u64
+2026-08-06T05:05:35,845 [INFO] app.service.worker - Worker worker-50 heartbeat ok
+2026-08-07T06:06:42,846 [INFO] app.service.worker - Worker worker-75 heartbeat ok
+2026-08-08T07:07:49,847 [INFO] app.service.worker - Session opened for user u77
+2026-08-09T08:08:56,848 [INFO] app.service.db - Request GET /api/v1/messages completed in 1ms
+2026-08-10T09:09:03,849 [INFO] app.service.api - Worker worker-97 heartbeat ok
+2026-08-11T10:10:10,850 [CRITICAL] app.service.worker - Disk usage 940% on /var/log -- shedding load
+2026-08-12T11:11:17,851 [ERROR] app.service.worker - Connection timeout connecting to db-49 at 10.0.0.6:5432 after 30000ms
+2026-08-13T12:12:24,852 [INFO] app.service.worker - Worker worker-8 heartbeat ok
+2026-08-14T13:13:31,853 [ERROR] app.service.api - Failed to parse payload for order_id=884244: unexpected token
+    at com.example.Handler.process(Handler.java:118)
+
+2026-08-15T14:14:38,854 [INFO] app.service.api - Worker worker-58 heartbeat ok
+2026-08-16T15:15:45,855 [WARNING] app.service.api - Retry 43/5 for job worker-43
+2026-08-17T16:16:52,856 [INFO] app.service.worker - Worker worker-56 heartbeat ok
+2026-08-18T17:17:59,857 [INFO] app.service.worker - Request GET /api/v1/messages completed in 68ms
+2026-08-19T18:18:06,858 [INFO] app.service.db - Request GET /api/v1/messages completed in 83ms
+2026-08-20T19:19:13,859 [INFO] app.service.worker - Worker worker-38 heartbeat ok
+2026-08-21T20:20:20,860 [INFO] app.service.api - Request GET /api/v1/messages completed in 27ms
+2026-08-22T21:21:27,861 [INFO] app.service.api - Request GET /api/v1/messages completed in 16ms
+2026-08-23T22:22:34,862 [INFO] app.service.worker - Worker worker-14 heartbeat ok
+2026-08-24T23:23:41,863 [DEBUG] app.service.worker - state=75 queue_depth=75
+2026-08-25T00:24:48,864 [CRITICAL] app.service.db - Disk usage 999% on /var/log -- shedding load
+2026-08-26T01:25:55,865 [DEBUG] app.service.worker - state=85 queue_depth=85
+2026-08-27T02:26:02,866 [INFO] app.service.api - Request GET /api/v1/messages completed in 33ms
+2026-08-28T03:27:09,867 [WARNING] app.service.api - Retry 90/5 for job worker-90
+2026-08-01T04:28:16,868 [INFO] app.service.worker - Worker worker-88 heartbeat ok
+2026-08-02T05:29:23,869 [INFO] app.service.api - Session opened for user u6
+2026-08-03T06:30:30,870 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-04T07:31:37,871 [WARNING] app.service.worker - Cache miss ratio 0.56 above threshold
+2026-08-05T08:32:44,872 [ERROR] app.service.db - Connection timeout connecting to db-93 at 10.0.0.8:5432 after 30000ms
+2026-08-06T09:33:51,873 [WARNING] app.service.db - Cache miss ratio 0.88 above threshold
+2026-08-07T10:34:58,874 [WARNING] app.service.api - Cache miss ratio 0.30 above threshold
+2026-08-08T11:35:05,875 [WARNING] app.service.worker - Cache miss ratio 0.76 above threshold
+2026-08-09T12:36:12,876 [INFO] app.service.worker - Request GET /api/v1/messages completed in 91ms
+2026-08-10T13:37:19,877 [INFO] app.service.api - Session opened for user u46
+2026-08-11T14:38:26,878 [INFO] app.service.db - Request GET /api/v1/messages completed in 85ms
+2026-08-12T15:39:33,879 [INFO] app.service.api - Session opened for user u86
+2026-08-13T16:40:40,880 [INFO] app.service.db - Request GET /api/v1/messages completed in 59ms
+2026-08-14T17:41:47,881 [INFO] app.service.worker - Session opened for user u22
+2026-08-15T18:42:54,882 [INFO] app.service.worker - Request GET /api/v1/messages completed in 42ms
+2026-08-16T19:43:01,883 [DEBUG] app.service.worker - state=26 queue_depth=26
+2026-08-17T20:44:08,884 [INFO] app.service.db - Request GET /api/v1/messages completed in 82ms
+2026-08-18T21:45:15,885 [INFO] app.service.db - Session opened for user u45
+2026-08-19T22:46:22,886 [DEBUG] app.service.db - state=41 queue_depth=41
+2026-08-20T23:47:29,887 [ERROR] app.service.worker - Connection timeout connecting to db-40 at 10.0.0.8:5432 after 30000ms
+2026-08-21T00:48:36,888 [ERROR] app.service.db - Upload rejected: file 'rapport_financière.csv' exceeds 25 MB limit
+2026-08-22T01:49:43,889 [DEBUG] app.service.api - state=74 queue_depth=74
+2026-08-23T02:50:50,890 [WARNING] app.service.worker - Retry 39/5 for job worker-39
+2026-08-24T03:51:57,891 [INFO] app.service.db - Worker worker-63 heartbeat ok
+2026-08-25T04:52:04,892 [INFO] app.service.api - Worker worker-53 heartbeat ok
+2026-08-26T05:53:11,893 [INFO] app.service.worker - Session opened for user u18
+2026-08-27T06:54:18,894 [INFO] app.service.db - Request GET /api/v1/messages completed in 17ms
+2026-08-28T07:55:25,895 [INFO] app.service.worker - Session opened for user u21
+2026-08-01T08:56:32,896 [INFO] app.service.db - Session opened for user u18
+2026-08-02T09:57:39,897 [DEBUG] app.service.worker - state=35 queue_depth=35
+2026-08-03T10:58:46,898 [DEBUG] app.service.db - state=9 queue_depth=9
+2026-08-04T11:59:53,899 [WARNING] app.service.api - Retry 39/5 for job worker-39
+2026-08-05T12:00:00,900 [INFO] app.service.worker - Worker worker-72 heartbeat ok
