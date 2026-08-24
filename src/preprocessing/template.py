@@ -284,6 +284,17 @@ class PreprocessingTemplate:
         What one-hot does with a category unseen during fit. ``ignore``
         encodes it as all-zeros, which is the honest representation: at
         training time the model was told nothing about that level.
+    drop_first:
+        Drop one level per categorical column (the dummy-variable trap).
+        A full set of k dummies sums to 1 in every row, which is exactly
+        collinear with the intercept, so the design matrix loses one rank per
+        categorical column. Trees do not care, but an ordinary least-squares
+        fit inverts a near-singular matrix and produces coefficients of order
+        1e17 that cancel on the training rows and explode on unseen ones.
+        Off by default because it costs information at the margin: with
+        ``unknown_policy="ignore"`` an unseen category encodes as all-zeros,
+        which is then indistinguishable from the dropped reference level.
+        Turn it on when a linear model is downstream.
     """
 
     numeric_strategy: str = "median"
@@ -293,6 +304,7 @@ class PreprocessingTemplate:
     max_categories: int | None = None
     min_frequency: int | float | None = None
     unknown_policy: str = "ignore"
+    drop_first: bool = False
     verbose: bool = False
 
     # --- fitted state (trailing underscore, sklearn convention) -------------
@@ -374,6 +386,7 @@ class PreprocessingTemplate:
                 sparse_output=False,
                 max_categories=self.max_categories,
                 min_frequency=self.min_frequency,
+                drop="first" if self.drop_first else None,
                 dtype=np.float64,
             )
             self.encoder_.fit(imputed_cat)
@@ -477,6 +490,7 @@ class PreprocessingTemplate:
             max_categories=self.max_categories,
             min_frequency=self.min_frequency,
             unknown_policy=self.unknown_policy,
+            drop_first=self.drop_first,
             verbose=self.verbose,
         )
 
