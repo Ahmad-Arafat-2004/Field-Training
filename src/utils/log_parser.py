@@ -28,7 +28,11 @@ from typing import Iterable, Sequence
 if __package__ in (None, ""):  # pragma: no cover - exercised only as a script
     sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
 
-from src.utils.loader import DEFAULT_ENCODINGS, read_text_safe  # noqa: E402
+from src.utils.loader import (  # noqa: E402
+    DEFAULT_ENCODINGS,
+    EncodingDetectionError,
+    read_text_safe,
+)
 
 # Levels ordered by severity so the summary reads top-down rather than
 # alphabetically (CRITICAL before DEBUG).
@@ -289,7 +293,9 @@ def main(argv: Sequence[str] | None = None) -> int:
     except FileNotFoundError as exc:
         print(f"error: {exc}", file=sys.stderr)
         return 1
-    except UnicodeError as exc:
+    except (EncodingDetectionError, UnicodeError) as exc:
+        # Forcing --encoding on a file that is not in that encoding lands here.
+        # A clean message beats a traceback, and beats decoding into mojibake.
         print(f"error: could not decode {args.logfile}: {exc}", file=sys.stderr)
         return 1
 
