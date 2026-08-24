@@ -179,6 +179,107 @@ class TestDuplicateRows:
 # --------------------------------------------------------------------------
 # 3. Unseen categories at transform time
 # --------------------------------------------------------------------------
+class TestKeepColumns:
+    """Carrying identity columns through the split without feeding them to fit()."""
+
+    @pytest.fixture
+    def frame(self) -> pd.DataFrame:
+        return pd.DataFrame(
+            {
+                "message": [f"text {i % 30}" for i in range(120)],
+                "label": ["ham", "spam"] * 60,
+                "length": np.arange(120, dtype=float),
+                "digits": np.arange(120, dtype=float) % 7,
+            }
+        )
+
+    def test_model_matrix_holds_only_the_named_columns(
+        self, frame: pd.DataFrame
+    ) -> None:
+        split = split_dataset(
+            frame, test_size=0.25, random_state=0,
+            keep_columns=["length", "digits"],
+        )
+        assert list(split.train.X.columns) == ["length", "digits"]
+        assert list(split.test_X.columns) == ["length", "digits"]
+
+    def test_excluded_columns_come_back_as_meta(self, frame: pd.DataFrame) -> None:
+        split = split_dataset(
+            frame, test_size=0.25, random_state=0,
+            keep_columns=["length", "digits"],
+        )
+        assert list(split.train_meta.columns) == ["message", "label"]
+        assert len(split.train_meta) == len(split.train.X)
+        assert len(split.test_meta) == len(split.test_X)
+
+    def test_meta_stays_row_aligned_with_the_features(
+        self, frame: pd.DataFrame
+    ) -> None:
+        """Mis-paired metadata would silently mislabel every error-analysis row."""
+        split = split_dataset(
+            frame, test_size=0.25, random_state=0,
+            keep_columns=["length", "digits"],
+        )
+        assert split.test_meta.index.equals(split.test_X.index)
+        joined = split.test_X.join(split.test_meta)
+        for _, row in joined.iterrows():
+            original = frame.loc[frame["length"] == row["length"]].iloc[0]
+            assert row["message"] == original["message"]
+            assert row["digits"] == original["digits"]
+
+    def test_dedupe_uses_columns_the_model_never_sees(self) -> None:
+        """The SMS case: duplicates found by raw text, which is not a feature."""
+        frame = pd.DataFrame(
+            {
+                "message": ["a", "a", "b", "c", "d", "e", "f", "g", "h", "i"],
+                "length": [1.0, 9.0, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 10.0],
+            }
+        )
+        split = split_dataset(
+            frame,
+            test_size=0.2,
+            random_state=0,
+            duplicate_subset="message",
+            keep_columns=["length"],
+        )
+        assert split.n_duplicates_dropped == 1
+        assert list(split.train.X.columns) == ["length"]
+
+    def test_template_fits_without_touching_the_text(
+        self, frame: pd.DataFrame
+    ) -> None:
+        """Without keep_columns the text column would be one-hot encoded."""
+        split = split_dataset(
+            frame, test_size=0.25, random_state=0,
+            keep_columns=["length", "digits"],
+        )
+        prep = PreprocessingTemplate().fit(split.train)
+        assert prep.categorical_columns_ == []
+        assert prep.encoder_ is None
+        assert prep.get_feature_names_out() == ["length", "digits"]
+
+    def test_unknown_keep_column_raises(self, frame: pd.DataFrame) -> None:
+        with pytest.raises(KeyError, match="not in X"):
+            split_dataset(frame, keep_columns=["length", "nope"])
+
+    def test_no_meta_when_keep_columns_covers_everything(self) -> None:
+        frame = pd.DataFrame({"a": np.arange(50, dtype=float)})
+        split = split_dataset(
+            frame, test_size=0.2, random_state=0, keep_columns=["a"]
+        )
+        assert split.train_meta is None
+        assert split.test_meta is None
+
+    def test_target_stays_aligned_with_meta(self, frame: pd.DataFrame) -> None:
+        y = (frame["label"] == "spam").astype(int)
+        split = split_dataset(
+            frame, y, test_size=0.25, random_state=0, stratify=True,
+            keep_columns=["length", "digits"],
+        )
+        expected = (split.test_meta["label"] == "spam").astype(int)
+        np.testing.assert_array_equal(split.test_y.to_numpy(), expected.to_numpy())
+
+
 class TestUnseenCategories:
     @pytest.fixture
     def fitted(self, mixed_frame: pd.DataFrame):
