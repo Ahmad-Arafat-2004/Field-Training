@@ -7,10 +7,11 @@ only: pandas, numpy, scikit-learn, matplotlib, seaborn. No deep learning framewo
 |---|---|
 | **Project 1** | SMS spam classification from 12 hand-engineered shape features |
 | **Project 2** | Six regression families compared through one preprocessing template |
+| **Audit** | Whether more data, resampling, or a bigger corpus would help — measured |
 | **Utility 1** | Preprocessing template where train/test leakage is structurally impossible |
 | **Utility 2** | Encoding-safe CSV loader that reports which encoding it used |
 | **Utility 3** | CLI log parser with explicit encoding handling |
-| **Tests** | 182 pytest tests |
+| **Tests** | 203 pytest tests |
 
 ---
 
@@ -96,13 +97,16 @@ pytest
 │   ├── features/
 │   │   ├── spam_features.py       # the 12 SMS features
 │   │   └── car_features.py        # used-car column cleaning
+│   ├── analysis/
+│   │   └── audit.py               # contamination / viability / learning-curve checks
 │   └── models/
 │       └── regression_comparison.py   # six families + --data CLI
 ├── notebooks/
 │   ├── 01_spam_eda.ipynb
 │   ├── 02_spam_model.ipynb
-│   └── 03_regression_comparison.ipynb
-├── tests/                         # 182 tests
+│   ├── 03_regression_comparison.ipynb
+│   └── 04_dataset_audit.ipynb
+├── tests/                         # 203 tests
 ├── scripts/
 │   ├── download_data.py           # fetch both datasets into data/
 │   └── export_figures.py          # regenerate the figures used in this README
@@ -141,6 +145,11 @@ the choice is made.
 | `01_spam_eda.ipynb` | Class balance, length histograms by class, digit- and uppercase-ratio distributions, duplicate analysis, univariate separation ranking | ~30s |
 | `02_spam_model.ipynb` | 12 features → label encode → stratified split → scale → decision tree + random forest → spam-class metrics, importances, LIMITATIONS | ~40s |
 | `03_regression_comparison.ipynb` | Six regression families through one template, R²/RMSE table, degree-4 overfitting demo | ~3min |
+| `04_dataset_audit.ipynb` | Learning curve, six resampling strategies, and a contamination audit of three candidate corpora | ~5min |
+
+`04` needs the optional audit corpora (`python scripts/download_data.py --only audit`,
+~734 MB). Any that are missing are skipped rather than failing, so the notebook still
+runs on the SMS corpus alone.
 
 `03` runs a `--data` equivalent: set `DATA_PATH` in the imports cell to point at another CSV.
 
@@ -339,6 +348,58 @@ rows, finding noise rather than signal.
 
 *(The slightly negative gap at degree 2 is split noise, not an artefact — see notebook 03.)*
 
+### Audit — would more data, or resampling, have helped?
+
+Two fair objections to Project 1: the classes are imbalanced, and 5,000 rows is not many.
+Notebook 04 answers both by measurement.
+
+![Learning curve and resampling comparison](assets/audit_learning_curve_and_resampling.png)
+
+**More data: barely.** Going from 206 to 4,136 training rows buys **+0.036 F1** in total,
+and *doubling* the data from 2,068 to 4,136 rows buys **+0.010**. The curve is flat because
+the ceiling is the feature set — twelve numbers describing message shape, with no access to
+word identity — not the row count.
+
+**Resampling: no.** Every strategy that synthesises or discards rows loses:
+
+| Strategy | Test F1 (spam) | vs shipped |
+|---|---|---|
+| `class_weight="balanced"` | 0.9486 | **+0.0046** |
+| **none (shipped)** | **0.9440** | — |
+| SMOTE (k=1) | 0.9380 | −0.0060 |
+| SMOTE (k=5) | 0.9375 | −0.0065 |
+| RandomOverSampler | 0.9344 | −0.0096 |
+| RandomUnderSampler | 0.9058 | −0.0382 |
+
+The only gain is `class_weight`, at +0.005 — which in real terms is **two more spam caught
+and one more legitimate message misfiled**, out of 1,035. That is a policy choice about the
+relative cost of the two errors, not a modelling improvement.
+
+#### A 170,000-row corpus that would have produced a fake result
+
+The audit also examined three larger corpora. The biggest — 170k rows after cleaning, with
+a friendlier 25% positive class — was **rejected**:
+
+| Marker | in ham | in spam | AUC |
+|---|---|---|---|
+| contains a raw digit | 12.4% | 93.6% | 0.906 |
+| contains `escapenumber` | 75.7% | **0.00%** | — |
+
+Its ham came from the Enron corpus with numbers substituted away; its spam came from
+elsewhere with digits intact. So on that corpus the digit features do not measure spam —
+**they measure which source file each row came from.** That is fatal here specifically,
+because `digit_count`, `digit_ratio` and `has_long_digit_run` carry **63% of this model's
+importance**.
+
+**The check is not a threshold, and this is the part worth reading the notebook for.** A
+naive "flag any single-marker AUC above 0.85" rule fires on the *SMS corpus too* — it scores
+**0.896** on "contains a digit", because spam has to carry a number to call. Nearly the same
+number; opposite meaning. What separates them is an exact-zero cell (real phenomena leak;
+assembly pipelines are absolute) and whether a causal mechanism can be stated out loud.
+
+Nothing in the repository changed as a result. That is the correct outcome — but *"we
+measured and the current choice held up"* is a different claim from *"we never checked."*
+
 ---
 
 ## The three utilities
@@ -441,7 +502,7 @@ degree-3 polynomial from 0.7909 to 0.8942 and reordered the results table.
 ## Tests
 
 ```bash
-pytest                        # 182 tests
+pytest                        # 203 tests
 pytest -W error::DeprecationWarning
 pytest tests/test_template.py -v
 ```
@@ -453,6 +514,12 @@ pytest tests/test_template.py -v
 | `test_log_parser.py` | Level extraction, message normalisation, CLI exit codes |
 | `test_spam_features.py` | All 12 features, robustness, redaction |
 | `test_regression.py` | Car cleaning, six families, dummy trap, overfitting demo |
+| `test_audit.py` | Contamination detection, dead-feature grading, learning curves |
+
+`test_audit.py` pins the distinction the audit rests on: a marker that separates strongly
+**and** is absent from exactly one class is flagged, while a marker that separates just as
+strongly but leaks into both classes is not. Getting that backwards would either condemn
+the SMS corpus or clear the contaminated one.
 
 The four required template cases:
 

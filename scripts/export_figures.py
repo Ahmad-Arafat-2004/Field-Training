@@ -263,6 +263,85 @@ def fig_overfitting(demo: pd.DataFrame) -> None:
     save(fig, "regression_overfitting.png")
 
 
+def fig_audit(sms: pd.DataFrame, split, X_test, forest) -> None:
+    """Notebook 04: learning curve and resampling comparison.
+
+    Both come from the SMS corpus alone, so this runs without the optional
+    ~734 MB of audit corpora.
+    """
+    from imblearn.over_sampling import SMOTE, RandomOverSampler
+    from imblearn.under_sampling import RandomUnderSampler
+    from sklearn.metrics import f1_score
+
+    from src.analysis.audit import learning_curve_f1
+
+    prep = PreprocessingTemplate().fit(split.train)
+    X_train, y_train = prep.transform(split.train.X), split.train.y
+    y_test = split.test_y
+
+    curve = learning_curve_f1(X_train, y_train, X_test, y_test, seeds=5)
+
+    fig, axes = plt.subplots(1, 2, figsize=(11.8, 3.9))
+
+    axes[0].plot(curve["rows"], curve["f1_mean"], marker="o", color=SERIES[0])
+    axes[0].fill_between(
+        curve["rows"],
+        curve["f1_mean"] - curve["f1_std"],
+        curve["f1_mean"] + curve["f1_std"],
+        color=SERIES[0], alpha=0.15,
+    )
+    for _, r in curve.iterrows():
+        axes[0].annotate(
+            f"{r['f1_mean']:.3f}", (r["rows"], r["f1_mean"]),
+            textcoords="offset points", xytext=(0, 9), ha="center",
+            fontsize=8.5, color=INK_SECONDARY,
+        )
+    axes[0].set_title("Learning curve — flat, so more rows add little")
+    axes[0].set_xlabel("training rows")
+    axes[0].set_ylabel("test F1 (spam)")
+    axes[0].set_ylim(0.87, 0.97)
+    despine(axes[0])
+
+    def score(X, y):
+        m = RandomForestClassifier(
+            n_estimators=200, random_state=RANDOM_STATE, n_jobs=-1
+        ).fit(X, y)
+        return f1_score(y_test, m.predict(X_test), pos_label=1, zero_division=0)
+
+    base = score(X_train, y_train)
+    rows = [("none (shipped)", base)]
+    balanced = RandomForestClassifier(
+        n_estimators=200, random_state=RANDOM_STATE, n_jobs=-1,
+        class_weight="balanced",
+    ).fit(X_train, y_train)
+    rows.append((
+        "class_weight=balanced",
+        f1_score(y_test, balanced.predict(X_test), pos_label=1, zero_division=0),
+    ))
+    for label, sampler in [
+        ("RandomOverSampler", RandomOverSampler(random_state=RANDOM_STATE)),
+        ("SMOTE (k=5)", SMOTE(random_state=RANDOM_STATE, k_neighbors=5)),
+        ("RandomUnderSampler", RandomUnderSampler(random_state=RANDOM_STATE)),
+    ]:
+        Xr, yr = sampler.fit_resample(X_train, y_train)
+        rows.append((label, score(Xr, pd.Series(yr))))
+
+    table = pd.DataFrame(rows, columns=["strategy", "f1"]).sort_values("f1")
+    axes[1].barh(table["strategy"], table["f1"], color=SERIES[0], height=0.6)
+    axes[1].axvline(base, color=SERIES[1], linestyle="--", linewidth=1.5)
+    annotate_bars(axes[1], fmt="{:.3f}", horizontal=True)
+    # Precise wording: class_weight does beat the shipped model, by +0.005.
+    # Every strategy that synthesises or discards rows loses.
+    axes[1].set_title("Resampling — every synthetic-row strategy loses")
+    axes[1].set_xlabel("test F1 (spam)")
+    axes[1].set_xlim(0.85, 1.0)
+    axes[1].grid(axis="y", visible=False)
+    despine(axes[1])
+
+    fig.tight_layout()
+    save(fig, "audit_learning_curve_and_resampling.png")
+
+
 def main() -> int:
     apply_style()
 
@@ -280,6 +359,9 @@ def main() -> int:
     fig_spam_confusion(split, X_test, tree, forest)
     fig_spam_importance(forest, list(FEATURE_ORDER))
     fig_spam_pr_curve(split, X_test, forest)
+
+    print("Notebook 04 — dataset audit")
+    fig_audit(sms, split, X_test, forest)
 
     print("Project 2 — regression comparison")
     cars = load_cars(cars_path)
