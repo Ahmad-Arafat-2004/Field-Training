@@ -1,0 +1,13 @@
+[project]
+name = "training-portfolio"
+version = "0.1.0"
+description = "Field-training portfolio: SMS spam classification and a regression family comparison, plus reusable preprocessing/loading/log utilities."
+# Target is Python 3.11; the machine this was built on had 3.10.4 and nothing in
+# the stack behaves differently across the two. See README > Setup.
+requires-python = ">=3.10"
+
+[tool.pytest.ini_options]
+# Puts the repo root on sys.path so `from src...` resolves without an install step.
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

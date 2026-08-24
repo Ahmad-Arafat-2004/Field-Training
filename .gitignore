@@ -1,0 +1,24 @@
+# Data is not committed: the SMS corpus contains real phone numbers and names,
+# and both datasets are reproducible via scripts/download_data.py.
+data/
+
+# Generated figures / executed notebook copies
+reports/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Environments
+.venv/
+venv/
+env/
+
+# Editors / OS
+.vscode/
+.idea/
+Thumbs.db
+desktop.ini
