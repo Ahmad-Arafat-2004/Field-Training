@@ -111,6 +111,12 @@ class DataSplit:
     test_y: pd.Series | None = None
     n_duplicates_dropped: int = 0
     n_rows_before_dedupe: int = 0
+    # Columns excluded from the model by `keep_columns`, split the same way and
+    # index-aligned to train.X / test_X. Identity columns (a raw message body,
+    # an id) often have to survive de-duplication and then be available again
+    # for error analysis, without ever entering the feature matrix.
+    train_meta: pd.DataFrame | None = None
+    test_meta: pd.DataFrame | None = None
 
     @property
     def train_X(self) -> pd.DataFrame:
@@ -149,6 +155,7 @@ def split_dataset(
     stratify: bool | pd.Series | np.ndarray | None = None,
     drop_duplicates: bool = True,
     duplicate_subset: str | Sequence[str] | None = None,
+    keep_columns: Sequence[str] | None = None,
     verbose: bool = False,
 ) -> DataSplit:
     """De-duplicate, then split, and hand back a guarded training partition.
@@ -178,6 +185,18 @@ def split_dataset(
     duplicate_subset:
         Restrict the duplicate check to these columns (e.g. just the raw
         message text). Default None = all columns.
+    keep_columns:
+        Restrict the model matrix to these columns. Everything else is split
+        alongside and returned as ``train_meta`` / ``test_meta`` instead of
+        entering ``train.X``.
+
+        This exists for the common case where de-duplication needs a column the
+        model must never see. The SMS corpus is the example: duplicates have to
+        be identified by raw message text, but that text is precisely what the
+        model is not allowed to use, and the string label column would be a
+        perfect leak of the target. Dropping them after the split works but
+        leaves a window in which the wrong frame can reach ``fit``; naming the
+        model columns up front closes it.
 
     Returns
     -------
@@ -206,6 +225,21 @@ def split_dataset(
             if target is not None:
                 target = target.loc[keep_mask].reset_index(drop=True)
 
+    # Column selection happens after de-duplication, so the duplicate check can
+    # use columns the model will never see.
+    meta_frame: pd.DataFrame | None = None
+    if keep_columns is not None:
+        keep = list(keep_columns)
+        missing = [c for c in keep if c not in frame.columns]
+        if missing:
+            raise KeyError(
+                f"keep_columns names columns not in X: {missing}. "
+                f"Available: {list(frame.columns)}"
+            )
+        meta_columns = [c for c in frame.columns if c not in keep]
+        meta_frame = frame[meta_columns] if meta_columns else None
+        frame = frame[keep]
+
     strat_on: Any = None
     if stratify is True:
         if target is None:
@@ -220,22 +254,31 @@ def split_dataset(
                 "which is realigned for you."
             )
 
-    if target is None:
-        train_X, test_X = train_test_split(
-            frame,
-            test_size=test_size,
-            random_state=random_state,
-            stratify=strat_on,
-        )
-        train_y = test_y = None
-    else:
-        train_X, test_X, train_y, test_y = train_test_split(
-            frame,
-            target,
-            test_size=test_size,
-            random_state=random_state,
-            stratify=strat_on,
-        )
+    # Everything goes through one train_test_split call so features, target and
+    # metadata are partitioned by the same row assignment. Splitting them in
+    # separate calls would silently mis-pair rows the moment any argument
+    # differed.
+    arrays: list[Any] = [frame]
+    if target is not None:
+        arrays.append(target)
+    if meta_frame is not None:
+        arrays.append(meta_frame)
+
+    pieces = train_test_split(
+        *arrays,
+        test_size=test_size,
+        random_state=random_state,
+        stratify=strat_on,
+    )
+    train_X, test_X = pieces[0], pieces[1]
+    cursor = 2
+    train_y = test_y = None
+    if target is not None:
+        train_y, test_y = pieces[cursor], pieces[cursor + 1]
+        cursor += 2
+    train_meta = test_meta = None
+    if meta_frame is not None:
+        train_meta, test_meta = pieces[cursor], pieces[cursor + 1]
 
     split = DataSplit(
         train=TrainingPartition(X=train_X, y=train_y, _token=_SPLIT_TOKEN),
@@ -243,6 +286,8 @@ def split_dataset(
         test_y=test_y,
         n_duplicates_dropped=n_dropped,
         n_rows_before_dedupe=n_before,
+        train_meta=train_meta,
+        test_meta=test_meta,
     )
     if verbose:
         print(split.describe())
