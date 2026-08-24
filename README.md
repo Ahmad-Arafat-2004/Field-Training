@@ -1,4 +1,4 @@
-# Training Portfolio — Classical ML
+# Training Portfolio - Classical ML
 
 Two machine-learning projects and three supporting utilities, built with classical ML
 only: pandas, numpy, scikit-learn, matplotlib, seaborn. No deep learning frameworks.
@@ -7,7 +7,7 @@ only: pandas, numpy, scikit-learn, matplotlib, seaborn. No deep learning framewo
 |---|---|
 | **Project 1** | SMS spam classification from 12 hand-engineered shape features |
 | **Project 2** | Six regression families compared through one preprocessing template |
-| **Audit** | Whether more data, resampling, or a bigger corpus would help — measured |
+| **Audit** | Whether more data, resampling, or a bigger corpus would help - measured |
 | **Utility 1** | Preprocessing template where train/test leakage is structurally impossible |
 | **Utility 2** | Encoding-safe CSV loader that reports which encoding it used |
 | **Utility 3** | CLI log parser with explicit encoding handling |
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 
 ### Fetch the data
 
-`data/` is gitignored — the SMS corpus contains real phone numbers and names, and both
+`data/` is gitignored - the SMS corpus contains real phone numbers and names, and both
 files are reproducible from their public sources.
 
 ```bash
@@ -120,7 +120,7 @@ pytest
 
 ## Running the notebooks
 
-Run them in order — 02 builds on findings established in 01.
+Run them in order - 02 builds on findings established in 01.
 
 ```bash
 jupyter notebook          # then open notebooks/ and Run All
@@ -135,8 +135,8 @@ jupyter nbconvert --to notebook --execute --inplace notebooks/03_regression_comp
 ```
 
 All three are committed **with outputs**, so they are readable without running anything.
-Every notebook follows the same section order — imports → data loading → EDA →
-preprocessing → modelling → evaluation — with each section under a markdown heading, and
+Every notebook follows the same section order - imports → data loading → EDA →
+preprocessing → modelling → evaluation - with each section under a markdown heading, and
 a markdown cell recording the reason for every non-obvious parameter choice at the point
 the choice is made.
 
@@ -218,7 +218,7 @@ TOP ERROR MESSAGES  (112 error-level lines)
 
 ## Results
 
-### Project 1 — SMS spam classification
+### Project 1 - SMS spam classification
 
 Held-out test set: **1,035 messages, 131 spam.** 5,574 messages → 5,171 after dropping
 403 exact duplicates → stratified 80/20 split, `random_state=42`.
@@ -227,7 +227,7 @@ Held-out test set: **1,035 messages, 131 spam.** 5,574 messages → 5,171 after 
 
 The left panel is the fact that governs every metric choice below. The right panel is
 why shape features work at all: ham peaks near 35 characters with a long tail, spam
-clusters tightly at ~150 — written to fill the 160-character SMS limit.
+clusters tightly at ~150 - written to fill the 160-character SMS limit.
 
 **Headline metrics are precision, recall and F1 for the SPAM class.**
 
@@ -250,21 +250,21 @@ clusters tightly at ~150 — written to fill the 160-character SMS limit.
 ![Confusion matrices for both models](assets/spam_confusion_matrices.png)
 
 Worth reading side by side: **both models miss the exact same 13 spam messages.** The
-entire difference between them is false positives — the tree misfiles 10 legitimate
+entire difference between them is false positives - the tree misfiles 10 legitimate
 messages, the forest misfiles 1. That is the whole precision gap (0.9219 → 0.9916), and
 it lands on the error type that actually costs a user something: a real message diverted
 to the spam folder is a missed appointment, while a spam message reaching the inbox is
 an annoyance.
 
-The shared 13 misses are the recall ceiling described in the limitations — spam that
+The shared 13 misses are the recall ceiling described in the limitations - spam that
 looks like ordinary text on all twelve axes, which no amount of model capacity reaches.
 
 #### Precision–recall trade-off
 
 ![Precision-recall curve for the spam class](assets/spam_precision_recall.png)
 
-`class_weight` was left at `None` deliberately, so this curve — rather than a single
-tuned number — is how the trade-off is presented. The 0.5 threshold is one point on it;
+`class_weight` was left at `None` deliberately, so this curve - rather than a single
+tuned number - is how the trade-off is presented. The 0.5 threshold is one point on it;
 moving along the curve is a policy decision about the relative cost of the two error
 types, not a modelling one.
 
@@ -272,7 +272,7 @@ types, not a modelling one.
 
 ![Random forest feature importances](assets/spam_feature_importance.png)
 
-Mean decrease in impurity — top 3 account for 63.0%:
+Mean decrease in impurity - top 3 account for 63.0%:
 
 | Rank | Feature | Importance |
 |---|---|---|
@@ -285,12 +285,12 @@ Mean decrease in impurity — top 3 account for 63.0%:
 The remaining seven: `uppercase_ratio`, `mean_word_length`, `currency_symbol_count`,
 `has_url_like`, `word_count`, `non_alnum_count`, `exclamation_count`.
 
-> Impurity-based importance is biased toward high-cardinality features — a continuous
+> Impurity-based importance is biased toward high-cardinality features - a continuous
 > column offers a tree far more candidate split points than a binary flag, so the flags
 > here are understated relative to what they contribute. Read the ranking as indicative.
 
 **Limitations** are written up in full in notebook 02 §7. In short: the features capture
-message *shape* and never word identity, which caps recall at ~0.90 — the missed spam is
+message *shape* and never word identity, which caps recall at ~0.90 - the missed spam is
 the spam that reads like ordinary text, and no amount of extra data fixes it. The currency
 and uppercase features assume English and Latin script; on Arabic they are undefined
 (unicameral script, so `uppercase_ratio` reads 0 for everything), and on **Arabizi** the
@@ -298,7 +298,7 @@ digit-for-letter substitution (`3`→ع, `7`→ح) makes ordinary conversation l
 to the two strongest features in the model, pushing legitimate messages toward false
 positives.
 
-### Project 2 — Regression family comparison
+### Project 2 - Regression family comparison
 
 Held-out test set: **1,382 listings.** 8,128 rows → 6,907 after dropping 1,221 exact
 duplicates → 80/20 split, `random_state=42`. All six estimators receive the **identical
@@ -320,14 +320,14 @@ polarity, and sharing one baseline would invite exactly the misreading dual-axis
 are notorious for. The row order is shared so the eye can compare across both.*
 
 **Flexibility does not order these results**, and notebook 03 §6.2 works through why. A
-degree-3 polynomial beats both the SVR and an unpruned decision tree — the most flexible
+degree-3 polynomial beats both the SVR and an unpruned decision tree - the most flexible
 hypothesis class in the table. What orders them is the bias–variance trade-off, and the
 `R² gap` column is the variance term: the decision tree fits training data to R² 0.9992
 and gives 0.19 of it back. The forest and the single tree are the cleanest comparison
 available, since the base learner is identical and the only difference is averaging 200
 decorrelated copies.
 
-#### Overfitting demonstration — polynomial degree sweep
+#### Overfitting demonstration - polynomial degree sweep
 
 Six strongest numeric features, degrees 1–4:
 
@@ -346,9 +346,9 @@ collapses (0.8547 → 0.4051), the gap widens **134×**, and test RMSE rises by 
 per listing**. The mechanism is 2.5× the parameters (83 → 209 terms) fitted on the same
 rows, finding noise rather than signal.
 
-*(The slightly negative gap at degree 2 is split noise, not an artefact — see notebook 03.)*
+*(The slightly negative gap at degree 2 is split noise, not an artefact - see notebook 03.)*
 
-### Audit — would more data, or resampling, have helped?
+### Audit - would more data, or resampling, have helped?
 
 Two fair objections to Project 1: the classes are imbalanced, and 5,000 rows is not many.
 Notebook 04 answers both by measurement.
@@ -357,54 +357,54 @@ Notebook 04 answers both by measurement.
 
 **More data: barely.** Going from 206 to 4,136 training rows buys **+0.036 F1** in total,
 and *doubling* the data from 2,068 to 4,136 rows buys **+0.010**. The curve is flat because
-the ceiling is the feature set — twelve numbers describing message shape, with no access to
-word identity — not the row count.
+the ceiling is the feature set - twelve numbers describing message shape, with no access to
+word identity - not the row count.
 
 **Resampling: no.** Every strategy that synthesises or discards rows loses:
 
 | Strategy | Test F1 (spam) | vs shipped |
 |---|---|---|
 | `class_weight="balanced"` | 0.9486 | **+0.0046** |
-| **none (shipped)** | **0.9440** | — |
+| **none (shipped)** | **0.9440** | - |
 | SMOTE (k=1) | 0.9380 | −0.0060 |
 | SMOTE (k=5) | 0.9375 | −0.0065 |
 | RandomOverSampler | 0.9344 | −0.0096 |
 | RandomUnderSampler | 0.9058 | −0.0382 |
 
-The only gain is `class_weight`, at +0.005 — which in real terms is **two more spam caught
+The only gain is `class_weight`, at +0.005 - which in real terms is **two more spam caught
 and one more legitimate message misfiled**, out of 1,035. That is a policy choice about the
 relative cost of the two errors, not a modelling improvement.
 
 #### A 170,000-row corpus that would have produced a fake result
 
-The audit also examined three larger corpora. The biggest — 170k rows after cleaning, with
-a friendlier 25% positive class — was **rejected**:
+The audit also examined three larger corpora. The biggest - 170k rows after cleaning, with
+a friendlier 25% positive class - was **rejected**:
 
 | Marker | in ham | in spam | AUC |
 |---|---|---|---|
 | contains a raw digit | 12.4% | 93.6% | 0.906 |
-| contains `escapenumber` | 75.7% | **0.00%** | — |
+| contains `escapenumber` | 75.7% | **0.00%** | - |
 
 Its ham came from the Enron corpus with numbers substituted away; its spam came from
-elsewhere with digits intact. So on that corpus the digit features do not measure spam —
+elsewhere with digits intact. So on that corpus the digit features do not measure spam -
 **they measure which source file each row came from.** That is fatal here specifically,
 because `digit_count`, `digit_ratio` and `has_long_digit_run` carry **63% of this model's
 importance**.
 
 **The check is not a threshold, and this is the part worth reading the notebook for.** A
-naive "flag any single-marker AUC above 0.85" rule fires on the *SMS corpus too* — it scores
+naive "flag any single-marker AUC above 0.85" rule fires on the *SMS corpus too* - it scores
 **0.896** on "contains a digit", because spam has to carry a number to call. Nearly the same
 number; opposite meaning. What separates them is an exact-zero cell (real phenomena leak;
 assembly pipelines are absolute) and whether a causal mechanism can be stated out loud.
 
-Nothing in the repository changed as a result. That is the correct outcome — but *"we
+Nothing in the repository changed as a result. That is the correct outcome - but *"we
 measured and the current choice held up"* is a different claim from *"we never checked."*
 
 ---
 
 ## The three utilities
 
-### 1. Preprocessing template — `src/preprocessing/template.py`
+### 1. Preprocessing template - `src/preprocessing/template.py`
 
 scikit-learn-style `fit` / `transform` / `fit_transform`, storing the fitted imputer,
 encoder and scaler for reuse. **Train/test leakage is prevented by construction, not by
@@ -437,7 +437,7 @@ encodes them all-zeros; `describe_unseen_categories()` makes that silent path vi
 coerces numeric columns that arrive as objects rather than failing the whole transform,
 and offers `keep_columns` so de-duplication can use columns the model must never see.
 
-### 2. Encoding-safe loader — `src/utils/loader.py`
+### 2. Encoding-safe loader - `src/utils/loader.py`
 
 ```python
 result = read_csv_safe("data/messages.csv")
@@ -448,20 +448,20 @@ print(result.describe())
 ```
 
 Tries UTF-8, falls back to Latin-1, and **reports which one worked** rather than failing
-silently or mangling characters. `errors="strict"` is load-bearing — a lenient handler
+silently or mangling characters. `errors="strict"` is load-bearing - a lenient handler
 would make every candidate "succeed" while substituting U+FFFD for every non-ASCII byte.
 Passing `encoding=` as a kwarg is rejected, since it would defeat the detection.
 `EXTENDED_ENCODINGS` adds `utf-8-sig` and `cp1252` for BOM and Windows-1252 inputs.
 
-### 3. Log parser — `src/utils/log_parser.py`
+### 3. Log parser - `src/utils/log_parser.py`
 
 Line count, per-level counts, and the most frequent error messages. **Encoding is always
-passed explicitly at read time** — never the platform default, which on Windows is still
+passed explicitly at read time** - never the platform default, which on Windows is still
 a legacy ANSI codepage in many setups, so an unqualified `open()` decodes the same file
 differently depending on where it runs.
 
 Error messages are grouped after masking timestamps, hex ids, IPs, numbers and quoted
-strings, and after dropping the dotted logger name — without that, one failure mode
+strings, and after dropping the dotted logger name - without that, one failure mode
 reported by three components counts as three distinct errors and the real top error never
 surfaces.
 
@@ -485,14 +485,14 @@ used-car data:
 
 Least squares inverted a near-singular matrix and produced coefficients of order 10¹⁷
 that cancelled almost exactly on the training rows and exploded on unseen ones. **Train R²
-stayed a plausible 0.73 throughout**, so nothing about the training fit signalled it — and
+stayed a plausible 0.73 throughout**, so nothing about the training fit signalled it - and
 the tree models were entirely unaffected, which is what makes it easy to ship by accident.
 
 ### De-duplicating on features alone discarded 470 real observations
 
 The regression pipeline was checking duplicates over feature columns only, so two listings
 with the same specification but different asking prices counted as duplicates and one was
-dropped — 1,691 rows removed where only 1,221 are genuine duplicates. Those are not
+dropped - 1,691 rows removed where only 1,221 are genuine duplicates. Those are not
 duplicates; they are two real observations that disagree, and that disagreement is exactly
 the irreducible noise the model deserves to be scored against. Fixing it moved the
 degree-3 polynomial from 0.7909 to 0.8942 and reordered the results table.
@@ -523,16 +523,16 @@ the SMS corpus or clear the contaminated one.
 
 The four required template cases:
 
-1. **Non-UTF-8 input** — a Latin-1 fixture reaches the template unmangled; the test also
+1. **Non-UTF-8 input** - a Latin-1 fixture reaches the template unmangled; the test also
    asserts that a *lenient* reader produces U+FFFD on the same file, so the guard is known
    to be load-bearing.
-2. **Duplicate rows** — dropped before the split, target stays aligned. A companion test
+2. **Duplicate rows** - dropped before the split, target stays aligned. A companion test
    characterises the bug directly: with de-duplication skipped, rows *do* land on both
    sides of the split.
-3. **Unseen categories at transform time** — no crash, all-zeros encoding, and the output
+3. **Unseen categories at transform time** - no crash, all-zeros encoding, and the output
    column count stays stable (a widened test matrix would break every fitted estimator
    downstream).
-4. **Scaler statistics come from the training partition** — asserts both halves of the
+4. **Scaler statistics come from the training partition** - asserts both halves of the
    claim: `scaler_.mean_` equals the train-partition mean **and** is measurably different
    from the full-dataset mean, so the test would actually fail if `fit()` ever saw
    everything. Same for the imputer median and the encoder categories.
@@ -547,7 +547,7 @@ scikit-learn, matplotlib, seaborn) behaves differently between the two, and no 3
 syntax is used. `pyproject.toml` declares `requires-python = ">=3.10"`.
 
 **The SMS file's encoding.** The brief describes the SMS Spam Collection as *"Latin-1
-encoded, not UTF-8"*. **The UCI zip distribution is in fact valid UTF-8** — the loader
+encoded, not UTF-8"*. **The UCI zip distribution is in fact valid UTF-8** - the loader
 decodes it as UTF-8 and `£`, `é` and friends come through intact, with zero U+FFFD
 replacement characters.
 
@@ -556,7 +556,7 @@ mirror (`spam.csv`) *is* Latin-1/CP-1252 and does fail a strict UTF-8 read, whic
 nearly every tutorial using it passes `encoding='latin-1'` explicitly.
 
 It is also precisely the case the loader exists for. Hard-coding either encoding would be
-wrong for one of the two distributions — and hard-coding Latin-1 would have **silently
+wrong for one of the two distributions - and hard-coding Latin-1 would have **silently
 mojibaked this file**, since Latin-1 maps all 256 byte values and therefore never raises:
 `£` would have become `Â£` with no error at all. Detecting and *reporting* is the only
 approach correct for both. The Latin-1 path is exercised in `tests/test_loader.py` against
