@@ -32,6 +32,28 @@ CARS_URL = (
 )
 CARS_TARGET = DATA_DIR / "car_details_v3.csv"
 
+# Candidate corpora examined in notebook 04 when considering a larger spam
+# dataset. Not needed for notebooks 01-03; fetched only with `--only audit`
+# because they total ~734 MB.
+HF = "https://huggingface.co/datasets/{repo}/resolve/main/{path}"
+AUDIT_SOURCES: dict[str, tuple[str, str, str]] = {
+    "audit_big_300k.csv": (
+        "locuoco/the-biggest-spam-ham-phish-email-dataset-300000",
+        "df.csv",
+        "365k emails, 3 classes -- the one notebook 04 rejects as contaminated",
+    ),
+    "audit_enron_spam.csv": (
+        "SetFit/enron_spam",
+        "enron_spam_data.csv",
+        "33.7k Enron emails, balanced spam/ham",
+    ),
+    "audit_phishing.csv": (
+        "zefang-liu/phishing-email-dataset",
+        "Phishing_Email.csv",
+        "18.6k emails labelled safe/phishing",
+    ),
+}
+
 USER_AGENT = "training-portfolio/0.1 (dataset fetch for coursework)"
 
 
@@ -90,6 +112,26 @@ def fetch_cars(force: bool = False) -> Fetched:
     return Fetched("Used-car listings", CARS_TARGET, len(raw), skipped=False)
 
 
+def fetch_audit(force: bool = False) -> list[Fetched]:
+    """The candidate corpora compared in notebook 04.
+
+    Optional: notebooks 01-03 do not touch these, and they total ~734 MB.
+    Notebook 04 skips any that are absent rather than failing.
+    """
+    results: list[Fetched] = []
+    for filename, (repo, path, description) in AUDIT_SOURCES.items():
+        target = DATA_DIR / filename
+        if target.exists() and not force:
+            results.append(
+                Fetched(description, target, target.stat().st_size, skipped=True)
+            )
+            continue
+        raw = _get(HF.format(repo=repo, path=path), timeout=600)
+        target.write_bytes(raw)
+        results.append(Fetched(description, target, len(raw), skipped=False))
+    return results
+
+
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -97,15 +139,23 @@ def main(argv: list[str] | None = None) -> int:
     )
     parser.add_argument(
         "--only",
-        choices=("sms", "cars"),
+        choices=("sms", "cars", "audit"),
         default=None,
-        help="Fetch just one dataset.",
+        help=(
+            "Fetch just one group. 'audit' pulls the ~734 MB of candidate "
+            "corpora that notebook 04 compares; it is not needed for "
+            "notebooks 01-03."
+        ),
     )
     args = parser.parse_args(argv)
 
     DATA_DIR.mkdir(parents=True, exist_ok=True)
+    # The audit corpora are large and optional, so they are excluded from a
+    # bare run and fetched only when asked for by name.
     jobs = {"sms": fetch_sms, "cars": fetch_cars}
-    if args.only:
+    if args.only == "audit":
+        jobs = {"audit": fetch_audit}
+    elif args.only:
         jobs = {args.only: jobs[args.only]}
 
     failures = 0
@@ -116,11 +166,12 @@ def main(argv: list[str] | None = None) -> int:
             print(f"  FAILED  {key}: {exc}", file=sys.stderr)
             failures += 1
             continue
-        state = "already present" if result.skipped else "downloaded"
-        print(
-            f"  {state:>15}  {result.name}: {result.path.name} "
-            f"({result.n_bytes:,} bytes)"
-        )
+        for item in result if isinstance(result, list) else [result]:
+            state = "already present" if item.skipped else "downloaded"
+            print(
+                f"  {state:>15}  {item.name}: {item.path.name} "
+                f"({item.n_bytes:,} bytes)"
+            )
 
     if failures:
         print(
