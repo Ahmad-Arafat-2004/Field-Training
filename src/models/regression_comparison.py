@@ -115,10 +115,23 @@ def prepare_split(
 
     rows = frame.dropna(subset=[target])
     y = rows[target]
-    X = rows.drop(columns=[target])
+    feature_columns = [c for c in rows.columns if c != target]
 
+    # The whole row, target included, goes into the duplicate check, and
+    # keep_columns holds the target out of the model matrix. Checking features
+    # alone would treat two listings with the same specification but different
+    # asking prices as duplicates and discard one of them -- but those are not
+    # duplicates, they are two real observations that happen to disagree, and
+    # that disagreement is exactly the irreducible noise the model should be
+    # scored against. Only a row identical in features *and* price is a
+    # genuine duplicate.
     split = split_dataset(
-        X, y, test_size=test_size, random_state=random_state, drop_duplicates=True
+        rows,
+        y,
+        test_size=test_size,
+        random_state=random_state,
+        drop_duplicates=True,
+        keep_columns=feature_columns,
     )
     # drop_first because four of the six families here are linear. A full dummy
     # set costs one rank per categorical column: without it this design matrix
