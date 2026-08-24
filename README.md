@@ -103,7 +103,10 @@ pytest
 │   ├── 02_spam_model.ipynb
 │   └── 03_regression_comparison.ipynb
 ├── tests/                         # 182 tests
-├── scripts/download_data.py
+├── scripts/
+│   ├── download_data.py           # fetch both datasets into data/
+│   └── export_figures.py          # regenerate the figures used in this README
+├── assets/                        # README figures (committed)
 ├── data/                          # gitignored
 ├── requirements.txt
 └── pyproject.toml
@@ -160,6 +163,17 @@ python -m src.models.regression_comparison --data path/to/other.csv --target pri
 | `--max-categories` | `20` | One-hot width cap per categorical column |
 | `--no-clean` | off | Skip the used-car-specific column cleaning |
 
+### Regenerate the README figures
+
+```bash
+python scripts/export_figures.py
+```
+
+The notebooks store their charts as base64 inside the `.ipynb`, which markdown cannot
+reference, so `assets/` holds the same figures as files. This script re-runs both
+pipelines and re-plots rather than copying stale images out of the notebooks, so the
+README figures cannot silently drift from the results the notebooks produce.
+
 ### Log parser (CLI)
 
 ```bash
@@ -200,6 +214,12 @@ TOP ERROR MESSAGES  (112 error-level lines)
 Held-out test set: **1,035 messages, 131 spam.** 5,574 messages → 5,171 after dropping
 403 exact duplicates → stratified 80/20 split, `random_state=42`.
 
+![Class balance and message length by class](assets/spam_eda.png)
+
+The left panel is the fact that governs every metric choice below. The right panel is
+why shape features work at all: ham peaks near 35 characters with a long tail, spam
+clusters tightly at ~150 — written to fill the 160-character SMS limit.
+
 **Headline metrics are precision, recall and F1 for the SPAM class.**
 
 | Model | Precision (spam) | Recall (spam) | **F1 (spam)** | Accuracy |
@@ -216,10 +236,34 @@ Held-out test set: **1,035 messages, 131 spam.** 5,574 messages → 5,171 after 
 > For further scale: notebook 01 finds that a **single-threshold rule on `digit_count`
 > alone reaches spam F1 0.897**. The twelve-feature forest adds ~4.7 points on top of that.
 
-Confusion matrix, random forest: **13 spam missed, 1 legitimate message misfiled** out of
-1,035.
+#### Confusion matrices
 
-**Feature importances** (mean decrease in impurity) — top 3 account for 63.0%:
+![Confusion matrices for both models](assets/spam_confusion_matrices.png)
+
+Worth reading side by side: **both models miss the exact same 13 spam messages.** The
+entire difference between them is false positives — the tree misfiles 10 legitimate
+messages, the forest misfiles 1. That is the whole precision gap (0.9219 → 0.9916), and
+it lands on the error type that actually costs a user something: a real message diverted
+to the spam folder is a missed appointment, while a spam message reaching the inbox is
+an annoyance.
+
+The shared 13 misses are the recall ceiling described in the limitations — spam that
+looks like ordinary text on all twelve axes, which no amount of model capacity reaches.
+
+#### Precision–recall trade-off
+
+![Precision-recall curve for the spam class](assets/spam_precision_recall.png)
+
+`class_weight` was left at `None` deliberately, so this curve — rather than a single
+tuned number — is how the trade-off is presented. The 0.5 threshold is one point on it;
+moving along the curve is a policy decision about the relative cost of the two error
+types, not a modelling one.
+
+#### Feature importances
+
+![Random forest feature importances](assets/spam_feature_importance.png)
+
+Mean decrease in impurity — top 3 account for 63.0%:
 
 | Rank | Feature | Importance |
 |---|---|---|
@@ -231,6 +275,10 @@ Confusion matrix, random forest: **13 spam missed, 1 legitimate message misfiled
 
 The remaining seven: `uppercase_ratio`, `mean_word_length`, `currency_symbol_count`,
 `has_url_like`, `word_count`, `non_alnum_count`, `exclamation_count`.
+
+> Impurity-based importance is biased toward high-cardinality features — a continuous
+> column offers a tree far more candidate split points than a binary flag, so the flags
+> here are understated relative to what they contribute. Read the ranking as indicative.
 
 **Limitations** are written up in full in notebook 02 §7. In short: the features capture
 message *shape* and never word identity, which caps recall at ~0.90 — the missed spam is
@@ -256,6 +304,12 @@ split and identical fitted preprocessing**, so the estimator is the only variabl
 | Multiple linear | 33 | 0.7131 | ₹251,967 | 0.7297 | 0.0167 |
 | Simple linear (`max_power`) | 1 | 0.4115 | ₹360,829 | 0.4864 | 0.0749 |
 
+![Held-out R-squared and RMSE for all six families](assets/regression_comparison.png)
+
+*Two panels rather than a dual-axis chart: R² and RMSE have different units and opposite
+polarity, and sharing one baseline would invite exactly the misreading dual-axis charts
+are notorious for. The row order is shared so the eye can compare across both.*
+
 **Flexibility does not order these results**, and notebook 03 §6.2 works through why. A
 degree-3 polynomial beats both the SVR and an unpruned decision tree — the most flexible
 hypothesis class in the table. What orders them is the bias–variance trade-off, and the
@@ -274,6 +328,8 @@ Six strongest numeric features, degrees 1–4:
 | 2 | 27 | 0.8077 | 0.8303 | −0.0226 | ₹193,773 |
 | **3** | 83 | 0.8584 | **0.8547** | **0.0037** | **₹179,287** |
 | **4** | 209 | **0.8946** | 0.4051 | **0.4895** | ₹362,803 |
+
+![Polynomial degree sweep showing train and test R-squared diverging](assets/regression_overfitting.png)
 
 **Degree 4 fits the training data better and the world worse.** Train R² rises
 (0.8584 → 0.8946), so anyone watching only training performance would ship it. Test R²
